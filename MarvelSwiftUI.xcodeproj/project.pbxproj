@@ -95,6 +95,11 @@
 		4A61C2F429CEDEC9001C898C /* MarvelSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4A61C32029CEE5FA001C898C /* Models */,
+				4A61C32129CEE603001C898C /* Views */,
+				4A61C32229CEE60E001C898C /* ViewModels */,
+				4A61C32329CEE62F001C898C /* Services */,
+				4A61C32429CEE637001C898C /* Tools */,
 				4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */,
 				4A61C2F729CEDEC9001C898C /* ContentView.swift */,
 				4A61C2F929CEDECB001C898C /* Assets.xcassets */,
@@ -127,6 +132,41 @@
 				4A61C31329CEDECB001C898C /* MarvelSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = MarvelSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		4A61C32029CEE5FA001C898C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A61C32129CEE603001C898C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A61C32229CEE60E001C898C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A61C32329CEE62F001C898C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A61C32429CEE637001C898C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
