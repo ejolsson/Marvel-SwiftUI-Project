@@ -10,23 +10,23 @@ import Combine
 
 final class HeroViewModel: ObservableObject {
     
-    @Published var heroes: MarvelModel?
+    @Published var marvelResponseMemory: MarvelModel?
     @Published var status = Status.none
     
     var suscriptors = Set<AnyCancellable>()
     
     func getHeroes() {
         
-        ApiClient.shared.fetchMarvelData { [weak self] allheroes, error in
+        ApiClient.shared.fetchMarvelData { [weak self] marvelResponse, error in
             guard let self = self else { return }
             
-            if let allheroes = allheroes {
-                self.heroes = allheroes
-                print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > allheroes: \(String(describing: allheroes))\n") // prints 2nd of 4
+            if let marvelResponse = marvelResponse {
+                self.marvelResponseMemory = marvelResponse
+                print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > allheroes: \(String(describing: marvelResponse))\n") // prints 2nd of 4
             } else {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
             }
-            print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > self.heroes: \(String(describing: self.heroes))\n") // prints 3rd of 4
+            print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > self.heroes: \(String(describing: self.marvelResponseMemory))\n") // prints 3rd of 4
         }
     }
     
@@ -56,7 +56,7 @@ final class HeroViewModel: ObservableObject {
                     self.status = .loaded
                 }
             } receiveValue: { data in
-                self.heroes = data
+                self.marvelResponseMemory = data
             }
             .store(in: &suscriptors)
 
