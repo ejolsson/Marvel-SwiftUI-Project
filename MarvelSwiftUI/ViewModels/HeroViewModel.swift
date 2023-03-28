@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HeroViewModel: ObservableObject {
+final class HeroViewModel: ObservableObject {
     
     @Published var heroes: MarvelModel?
     @Published var status = Status.none
