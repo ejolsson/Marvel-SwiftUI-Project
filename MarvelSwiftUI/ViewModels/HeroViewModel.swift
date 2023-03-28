@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HeroViewModel: NSObject { // double check NSObject...
+class HeroViewModel: ObservableObject {
     
     @Published var heroes: MarvelModel?
     @Published var status = Status.none
@@ -32,4 +32,34 @@ class HeroViewModel: NSObject { // double check NSObject...
     
 
     
+    func getHerosUsingRequest(filter: String){
+        self.status = .loading
+        
+        URLSession.shared
+            .dataTaskPublisher(for: ApiClient.shared.prepMarvelDataRequest(filter: filter))
+            .tryMap{
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else{
+                    throw URLError(.badServerResponse)
+                }
+                
+                //TODO OK
+                return $0.data
+            }
+            .decode(type: MarvelModel.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion{
+                case .failure:
+                    self.status = Status.error(error: "Error buscando heroes")
+                case .finished:
+                    self.status = .loaded
+                }
+            } receiveValue: { data in
+                self.heroes = data
+            }
+            .store(in: &suscriptors)
+
+        
+    }
 }

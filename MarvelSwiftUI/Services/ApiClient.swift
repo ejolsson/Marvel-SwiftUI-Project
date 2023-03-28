@@ -65,9 +65,31 @@ class ApiClient {
         }
         task.resume()
         
-    } // @escaping
+    }
     
-
+    func prepMarvelDataRequest(filter:String) -> URLRequest {
+        
+        // 1. Build the string
+        let urlString : String = "\(urlBase)\(endpoints.allHeroes.rawValue)"
+        
+        // 2. Build the url and request
+        var request: URLRequest = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = HTTPMethods.get
+        //        request.httpBody = try? JSONEncoder().encode(HerosFilter(name: filter)) // NOT required?
+        //        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type") // NOT required?
+        
+        // TODO: - Implement urlComponents instead of url string bits -
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [
+            URLQueryItem(name: "ts", value: "1"),
+            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
+            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
+            URLQueryItem(name: "limit", value: "1"),
+            URLQueryItem(name: "offset", value: "200")
+        ]
+        
+        return request
+    }
 }
 
 enum endpoints: String {
