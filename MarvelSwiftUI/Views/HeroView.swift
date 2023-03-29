@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct HeroView: View {
+    
     @EnvironmentObject var viewModel: HeroViewModel
     @State private var filter = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        NavigationStack{
+            List{
+                if let heros = viewModel.heroes{
+                    ForEach(heros) { hero in
+                        NavigationLink {
+                            HeroesDetailView(hero: hero)
+                        } label: {
+                            HeroesRowView(hero: hero)
+                        }
+                    } //end ForEach
+                } // end if let heros
+            } // end List
+        } // end NavStack
     }
 }
 

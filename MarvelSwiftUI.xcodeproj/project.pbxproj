@@ -17,7 +17,6 @@
 		4A2CE72429D4530E008D933A /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CE72129D4530E008D933A /* HeroDetailView.swift */; };
 		4A5EC7DF29D240F60040D9AB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5EC7DE29D240F60040D9AB /* TestData.swift */; };
 		4A61C2F629CEDEC9001C898C /* MarvelSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */; };
-		4A61C2F829CEDEC9001C898C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C2F729CEDEC9001C898C /* ContentView.swift */; };
 		4A61C2FA29CEDECB001C898C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61C2F929CEDECB001C898C /* Assets.xcassets */; };
 		4A61C2FE29CEDECB001C898C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61C2FD29CEDECB001C898C /* Preview Assets.xcassets */; };
 		4A61C30829CEDECB001C898C /* MarvelSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C30729CEDECB001C898C /* MarvelSwiftUITests.swift */; };
@@ -26,6 +25,9 @@
 		4A61C32629CEEA87001C898C /* MarvelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* MarvelModel.swift */; };
 		4A61C32729CEEA87001C898C /* MarvelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* MarvelModel.swift */; };
 		4A61C32829CEEA87001C898C /* MarvelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* MarvelModel.swift */; };
+		4A9A66E029D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
+		4A9A66E129D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
+		4A9A66E229D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
 		4AB7DB1129D375FF0056F59C /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7DB1029D375FF0056F59C /* HeroModel.swift */; };
 		4AB7DB1229D375FF0056F59C /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7DB1029D375FF0056F59C /* HeroModel.swift */; };
 		4AFB930A29CF103200616EA4 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB930929CF103200616EA4 /* ApiClient.swift */; };
@@ -58,7 +60,6 @@
 		4A5EC7DE29D240F60040D9AB /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		4A61C2F229CEDEC9001C898C /* MarvelSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIApp.swift; sourceTree = "<group>"; };
-		4A61C2F729CEDEC9001C898C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A61C2F929CEDECB001C898C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A61C2FB29CEDECB001C898C /* MarvelSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarvelSwiftUI.entitlements; sourceTree = "<group>"; };
 		4A61C2FD29CEDECB001C898C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -68,6 +69,8 @@
 		4A61C31129CEDECB001C898C /* MarvelSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIUITests.swift; sourceTree = "<group>"; };
 		4A61C31329CEDECB001C898C /* MarvelSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4A61C32529CEEA87001C898C /* MarvelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelModel.swift; sourceTree = "<group>"; };
+		4A9A66DF29D45B1900227423 /* HeroRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRowView.swift; sourceTree = "<group>"; };
+		4A9A66E329D45E5D00227423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AB7DB1029D375FF0056F59C /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		4AFB930929CF103200616EA4 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		4AFB930C29CF1EEA00616EA4 /* HeroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewModel.swift; sourceTree = "<group>"; };
@@ -121,13 +124,13 @@
 		4A61C2F429CEDEC9001C898C /* MarvelSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4A9A66E329D45E5D00227423 /* Info.plist */,
 				4A61C32029CEE5FA001C898C /* Models */,
 				4A61C32129CEE603001C898C /* Views */,
 				4A61C32229CEE60E001C898C /* ViewModels */,
 				4A61C32329CEE62F001C898C /* Services */,
 				4A61C32429CEE637001C898C /* Tools */,
 				4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */,
-				4A61C2F729CEDEC9001C898C /* ContentView.swift */,
 				4A61C2F929CEDECB001C898C /* Assets.xcassets */,
 				4A61C2FB29CEDECB001C898C /* MarvelSwiftUI.entitlements */,
 				4A61C2FC29CEDECB001C898C /* Preview Content */,
@@ -175,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				4A0F62C929D304960016F855 /* HeroView.swift */,
+				4A9A66DF29D45B1900227423 /* HeroRowView.swift */,
 				4A2CE72129D4530E008D933A /* HeroDetailView.swift */,
 			);
 			path = Views;
@@ -333,13 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A61C2F829CEDEC9001C898C /* ContentView.swift in Sources */,
 				4A61C2F629CEDEC9001C898C /* MarvelSwiftUIApp.swift in Sources */,
 				4A0F62CA29D304960016F855 /* HeroView.swift in Sources */,
 				4A61C32629CEEA87001C898C /* MarvelModel.swift in Sources */,
 				4A0F62C729D302C40016F855 /* StatusModel.swift in Sources */,
 				4A2CE72229D4530E008D933A /* HeroDetailView.swift in Sources */,
 				4A5EC7DF29D240F60040D9AB /* TestData.swift in Sources */,
+				4A9A66E029D45B1900227423 /* HeroRowView.swift in Sources */,
 				4AFB930A29CF103200616EA4 /* ApiClient.swift in Sources */,
 				4AFB930D29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */,
 				4AB7DB1129D375FF0056F59C /* HeroModel.swift in Sources */,
@@ -354,6 +358,7 @@
 				4AFB930E29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */,
 				4A0F62CB29D304960016F855 /* HeroView.swift in Sources */,
 				4A2CE72329D4530E008D933A /* HeroDetailView.swift in Sources */,
+				4A9A66E129D45B1900227423 /* HeroRowView.swift in Sources */,
 				4A61C30829CEDECB001C898C /* MarvelSwiftUITests.swift in Sources */,
 				4AB7DB1229D375FF0056F59C /* HeroModel.swift in Sources */,
 				4A61C32729CEEA87001C898C /* MarvelModel.swift in Sources */,
@@ -366,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A2CE72429D4530E008D933A /* HeroDetailView.swift in Sources */,
+				4A9A66E229D45B1900227423 /* HeroRowView.swift in Sources */,
 				4A61C31229CEDECB001C898C /* MarvelSwiftUIUITests.swift in Sources */,
 				4A61C31429CEDECB001C898C /* MarvelSwiftUIUITestsLaunchTests.swift in Sources */,
 				4A0F62CC29D304960016F855 /* HeroView.swift in Sources */,
@@ -510,6 +516,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelSwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Marvel Heroes";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -548,6 +555,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelSwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Marvel Heroes";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

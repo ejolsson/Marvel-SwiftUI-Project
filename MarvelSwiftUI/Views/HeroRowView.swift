@@ -1,5 +1,5 @@
 //
-//  HeroDetailView.swift
+//  HeroRowView.swift
 //  MarvelSwiftUI
 //
 //  Created by Eric Olsson on 3/29/23.
@@ -7,49 +7,32 @@
 
 import SwiftUI
 
-struct HeroesDetailView: View {
+struct HeroesRowView: View {
     var hero: HeroModel
     
     var body: some View {
-        ScrollView(.vertical){
-            VStack{
-                
-                HStack{
-                    Text(hero.name)
-                        .bold()
-                        .font(.title)
-                    Spacer()
-                }
-                .padding([.leading, .trailing], 20)
-                
-                //Foto
-                AsyncImage(url: URL(string: hero.photo)) { Image in
-                    Image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(10)
-                        .padding([.leading, .trailing],5)
-                        .opacity(0.6)
-                    
-                } placeholder: {
-                    Text("Downloading...")
-                }
-                
-                Text(hero.description)
-                    .foregroundColor(.gray)
-                    .font(.caption)
-                    .padding([.leading, .trailing, .top],10)
-                
-                
+        VStack{
+            AsyncImage(url: URL(string: hero.photo)) { Image in
+                Image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding([.leading, .trailing], 20)
+                    .opacity(0.6)
+            } placeholder: {
+                Text("Downloading photo...")
             }
+            Text("\(hero.name)")
+                .font(.title)
+                .foregroundColor(.gray)
+                .bold()
         }
     }
 }
 
-
-struct HeroesDetailView_Previews: PreviewProvider {
+struct HeroesRowView_Previews: PreviewProvider {
     static var previews: some View {
-        HeroesDetailView(
+        HeroesRowView(
             hero: HeroModel(
                 id: "001",
                 name: "Thor",
@@ -67,7 +50,6 @@ struct HeroesDetailView_Previews: PreviewProvider {
                     returned: 0
                 )
             ) // end HeroModel
-        ) // end HeroesDetailView
-    } // end static var
+        )
+    }
 }
-
