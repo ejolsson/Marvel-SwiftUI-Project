@@ -11,7 +11,7 @@ import Combine
 final class HeroViewModel: ObservableObject {
     
     @Published var marvelResponseMemory: MarvelModel?
-    @Published var heroes: [HeroModel]? // used for mock data below
+    @Published var heroes: [Result]? // used for mock data below
     @Published var status = Status.none
     
     var suscriptors = Set<AnyCancellable>()
@@ -82,39 +82,77 @@ final class HeroViewModel: ObservableObject {
     
     //For UI Tesing
     func getHerosTesting(){
-        let hero1 = HeroModel(id: "001", name: "Thor", photo: "http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg", description: "God of thunder", series: Comics(
-            available: 0,
-            collectionURI: "http://gateway.marvel.com/v1/public/characters/1015018/series",
-            items: [ComicsItem(
-                resourceURI: "http://gateway.marvel.com/v1/public/comics/30090",
-                name: "Age of Heroes (2010) #1"
-            )
-            ],
-            returned: 0
-        ))
         
-        let hero2 = HeroModel(id: "002", name: "Ironman", photo: "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg", description: "Genius, Billioinare", series: Comics(
-            available: 0,
-            collectionURI: "http://gateway.marvel.com/v1/public/characters/1015018/series",
-            items: [ComicsItem(
-                resourceURI: "http://gateway.marvel.com/v1/public/comics/30090",
-                name: "Avengers"
-            )
-            ],
-            returned: 0
-        ))
-       
-        let hero3 = HeroModel(id: "003", name: "Doctor Strange", photo: "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/5261a85a501fe.jpg", description: "Magician", series: Comics(
-            available: 0,
-            collectionURI: "http://gateway.marvel.com/v1/public/characters/1015018/series",
-            items: [ComicsItem(
-                resourceURI: "http://gateway.marvel.com/v1/public/comics/30090",
-                name: "ACTS OF VENGEANCE CROSSOVERS OMNIBUS (2011)"
-            )
-            ],
-            returned: 0
-        ))
+        let hero1 = Result(
+            id: 1009664,
+            name: "Thor",
+            description: "God of Thunder",
+            thumbnail: Thumbnail(
+                path: "http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350",
+                thumbnailExtension: Extension.jpg
+            ),
+            series: Comics(
+                available: 0,
+                collectionURI: "http://gateway.marvel.com/v1/public/characters/1017295/series",
+                items: [],
+                returned: 20)
+        )
+
+        let hero2 = Result(
+            id: 1009368,
+            name: "Iron Man",
+            description: "Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.",
+            thumbnail: Thumbnail(
+                path: "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55",
+                thumbnailExtension: Extension.jpg
+            ),
+            series: Comics(
+                available: 659,
+                collectionURI: "http://gateway.marvel.com/v1/public/characters/1009368/series",
+                items: [
+                    ComicsItem(
+                        resourceURI: "http://gateway.marvel.com/v1/public/series/16450",
+                        name: "A+X (2012 - 2014)"
+                    ),
+                    ComicsItem(
+                        resourceURI: "http://gateway.marvel.com/v1/public/series/6079",
+                        name: "Adam: Legend of the Blue Marvel (2008)"
+                    ),
+                    ComicsItem(
+                        resourceURI: "http://gateway.marvel.com/v1/public/series/27392",
+                        name: "Aero (2019 - 2020)"
+                    ),
+                    ComicsItem(
+                        resourceURI: "http://gateway.marvel.com/v1/public/series/9790",
+                        name: "Age of Heroes (2010)"
+                    )
+                ],
+                returned: 20)
+        )
         
+        let hero3 = Result(
+            id: 1009282,
+            name: "Doctor Strange",
+            description: "",
+            thumbnail: Thumbnail(
+                path: "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/5261a85a501fe",
+                thumbnailExtension: Extension.jpg
+            ),
+            series: Comics(
+                available: 902,
+                collectionURI: "http://gateway.marvel.com/v1/public/characters/1009282/comics",
+                items: [
+                    ComicsItem(
+                        resourceURI: "ttp://gateway.marvel.com/v1/public/comics/43508",
+                        name: "A+X (2012) #9"
+                    ),
+                    ComicsItem(
+                        resourceURI: "http://gateway.marvel.com/v1/public/comics/29317",
+                               name: "ACTS OF VENGEANCE CROSSOVERS OMNIBUS (Hardcover)"
+                              )
+                ],
+                returned: 20)
+        )
         self.heroes = [hero1, hero2, hero3]
     }
     

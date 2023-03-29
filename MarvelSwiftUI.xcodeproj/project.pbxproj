@@ -124,7 +124,6 @@
 		4A61C2F429CEDEC9001C898C /* MarvelSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				4A9A66E329D45E5D00227423 /* Info.plist */,
 				4A61C32029CEE5FA001C898C /* Models */,
 				4A61C32129CEE603001C898C /* Views */,
 				4A61C32229CEE60E001C898C /* ViewModels */,
@@ -133,6 +132,7 @@
 				4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */,
 				4A61C2F929CEDECB001C898C /* Assets.xcassets */,
 				4A61C2FB29CEDECB001C898C /* MarvelSwiftUI.entitlements */,
+				4A9A66E329D45E5D00227423 /* Info.plist */,
 				4A61C2FC29CEDECB001C898C /* Preview Content */,
 			);
 			path = MarvelSwiftUI;
