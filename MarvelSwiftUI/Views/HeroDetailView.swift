@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HeroesDetailView: View {
+    
+    @EnvironmentObject var viewModel: HeroViewModel
+//    @StateObject var viewModel: HeroViewModel
     var hero: Result
     
     var body: some View {
@@ -35,20 +38,46 @@ struct HeroesDetailView: View {
                     Text("Downloading...")
                 }
                 
-                Text(hero.description)
-                    .foregroundColor(.gray)
-                    .font(.caption)
-                    .padding([.leading, .trailing, .top],10)
+                // TODO: - VStack Series listings instead of description -
+//                Text(hero.description)
+//                    .foregroundColor(.gray)
+//                    .font(.caption)
+//                    .padding([.leading, .trailing, .top],10)
                 
-                
-            }
-        }
+                VStack {
+                    Text("Series")
+                        .bold()
+                    Spacer()
+                    Text(hero.series.items.first?.name ?? "")
+                    Text("Line 1")
+                    Text("Line 2")
+                    Text("Line 3")
+                    Text("Line 4")
+                    Text("Line 5")
+                    
+                    // Create list of series
+                    List{
+
+//                        if let series = hero.description{
+//                        if let series = hero.series.items.name{
+//                            print("\(series)\n")
+//                            ForEach(series) { series in
+//                            Text (series)
+//                            } //end ForEach
+//                        } // let series
+                    } // end List
+                } // series 
+            } // end VStack
+            
+        } // end ScrollView
+        .background (Color.blue)
     }
 }
 
 
 struct HeroesDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        HeroView().environmentObject(HeroViewModel())
         HeroesDetailView(
             hero: Result(
                 id: 1009368,

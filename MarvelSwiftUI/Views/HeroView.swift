@@ -14,6 +14,25 @@ struct HeroView: View {
     
     var body: some View {
 
+        // below switch statement reason for runtime fail... and api not working...
+//        switch viewModel.status{
+//        case .none:
+//            HeroView()
+////        case .register:
+////            Text("Registro")
+//        case .loaded:
+////            PrincipalView()
+//            HeroView()
+//        case .error(error: let errorSring):
+////            ErrorView(error: errorSring)
+//            HeroView()
+//        case .loading:
+//            HeroView()
+//            // TODO: add loader view
+////            LoaderView() //loader
+//        }
+//        print("heros: \(viewModel.heroes)\n")
+        
         NavigationStack{
             List{
                 if let heros = viewModel.heroes{

@@ -10,14 +10,15 @@ import Combine
 
 final class HeroViewModel: ObservableObject {
     
-    @Published var marvelResponseMemory: MarvelModel?
     @Published var heroes: [Result]? // used for mock data below
     @Published var status = Status.none
     
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        getHerosTesting()
+//        getHerosTesting()
+        getHeroes() // pub chg fm bckgnd error..
+//        getHerosUsingRequest(filter: "") // result is blank...
     }
     
     func getHeroes() {
@@ -26,22 +27,11 @@ final class HeroViewModel: ObservableObject {
             guard let self = self else { return }
             
             if let marvelResponse = marvelResponse {
-                self.marvelResponseMemory = marvelResponse
+                self.heroes = marvelResponse.data.results
                 print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > allheroes: \(String(describing: marvelResponse))\n") // prints 2nd of 4
-                
-                let heroArrayFmApi = marvelResponse.data.results // recevie hero portion of Marvel API
-                
-                var heroModel: [HeroModel] = []
-                
-                for item in heroArrayFmApi {
-                    
-                }
-                
-                
             } else {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
             }
-            print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > self.heroes: \(String(describing: self.marvelResponseMemory))\n") // prints 3rd of 4
         }
     }
     
@@ -57,25 +47,25 @@ final class HeroViewModel: ObservableObject {
                       response.statusCode == 200 else{
                     throw URLError(.badServerResponse)
                 }
-                
-                //TODO OK
+                print("A\n")
                 return $0.data
             }
-            .decode(type: MarvelModel.self, decoder: JSONDecoder())
+            .decode(type: [Result].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion{
                 case .failure:
-                    self.status = Status.error(error: "Error buscando heroes")
+                    self.status = Status.error(error: "Error finding heroes")
+                    print("X\n")
                 case .finished:
                     self.status = .loaded
+                    print("y\n")
                 }
             } receiveValue: { data in
-                self.marvelResponseMemory = data
+                self.heroes = data // is this the key???
+                print("getHerosUsingRequest heroes: \(String(describing: self.heroes))\n")
             }
             .store(in: &suscriptors)
-
-        
     }
     
     

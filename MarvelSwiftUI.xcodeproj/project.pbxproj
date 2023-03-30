@@ -12,6 +12,10 @@
 		4A0F62CA29D304960016F855 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F62C929D304960016F855 /* HeroView.swift */; };
 		4A0F62CB29D304960016F855 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F62C929D304960016F855 /* HeroView.swift */; };
 		4A0F62CC29D304960016F855 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F62C929D304960016F855 /* HeroView.swift */; };
+		4A26C89C29D5A7E50054E0DB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26C89B29D5A7E50054E0DB /* RootView.swift */; };
+		4A26C89D29D5A7E50054E0DB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26C89B29D5A7E50054E0DB /* RootView.swift */; };
+		4A26C89F29D5A8810054E0DB /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26C89E29D5A8810054E0DB /* RootViewModel.swift */; };
+		4A26C8A029D5A8810054E0DB /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26C89E29D5A8810054E0DB /* RootViewModel.swift */; };
 		4A2CE72229D4530E008D933A /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CE72129D4530E008D933A /* HeroDetailView.swift */; };
 		4A2CE72329D4530E008D933A /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CE72129D4530E008D933A /* HeroDetailView.swift */; };
 		4A2CE72429D4530E008D933A /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CE72129D4530E008D933A /* HeroDetailView.swift */; };
@@ -56,6 +60,8 @@
 /* Begin PBXFileReference section */
 		4A0F62C629D302C40016F855 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		4A0F62C929D304960016F855 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		4A26C89B29D5A7E50054E0DB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4A26C89E29D5A8810054E0DB /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		4A2CE72129D4530E008D933A /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		4A5EC7DE29D240F60040D9AB /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		4A61C2F229CEDEC9001C898C /* MarvelSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				4AFB930C29CF1EEA00616EA4 /* HeroViewModel.swift */,
+				4A26C89E29D5A8810054E0DB /* RootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 		4A61C32429CEE637001C898C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4A26C89B29D5A7E50054E0DB /* RootView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -347,6 +355,8 @@
 				4AFB930A29CF103200616EA4 /* ApiClient.swift in Sources */,
 				4AFB930D29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */,
 				4AB7DB1129D375FF0056F59C /* HeroModel.swift in Sources */,
+				4A26C89F29D5A8810054E0DB /* RootViewModel.swift in Sources */,
+				4A26C89C29D5A7E50054E0DB /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,9 +368,11 @@
 				4AFB930E29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */,
 				4A0F62CB29D304960016F855 /* HeroView.swift in Sources */,
 				4A2CE72329D4530E008D933A /* HeroDetailView.swift in Sources */,
+				4A26C89D29D5A7E50054E0DB /* RootView.swift in Sources */,
 				4A9A66E129D45B1900227423 /* HeroRowView.swift in Sources */,
 				4A61C30829CEDECB001C898C /* MarvelSwiftUITests.swift in Sources */,
 				4AB7DB1229D375FF0056F59C /* HeroModel.swift in Sources */,
+				4A26C8A029D5A8810054E0DB /* RootViewModel.swift in Sources */,
 				4A61C32729CEEA87001C898C /* MarvelModel.swift in Sources */,
 				4AFB930B29CF103200616EA4 /* ApiClient.swift in Sources */,
 			);

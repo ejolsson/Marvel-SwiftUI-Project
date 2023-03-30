@@ -12,8 +12,6 @@ class ApiClient {
     static let shared = ApiClient()
     
     let urlBase = "https://gateway.marvel.com:443/v1/public/characters"
-    let url1 = "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=1&offset=200"
-    let url2 = "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&name=Thor"
     
     func fetchMarvelData(completion: @escaping (MarvelModel?, Error?) -> Void) {
         
@@ -28,19 +26,16 @@ class ApiClient {
         
         // 1. Build the string
         let urlString: String = "\(ApiClient().urlBase)\(endpoints.allHeroes.rawValue)"
-        print("NetworkLayer > fetchHeros > urlString: \(urlString)\n")
         
         // 2. Build the URL (proper)
         guard let urlUrl = URL(string: urlString) else {
             completion(nil, NetworkError.malformedURL)
             return
         }
-        print("NetworkLayer > fetchHeros > urlUrl: \(urlUrl)\n")
         
         // 3. Build the URL Request
         var urlRequest = URLRequest(url: urlUrl)
         urlRequest.httpMethod = "GET"
-        print("NetworkLayer > fetchHeros > urlRequest: \(String(describing: urlRequest))\n")
         
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
@@ -61,7 +56,6 @@ class ApiClient {
                 return
             }
             completion(marvelModel, nil)
-            print("NetworkLayer > fetchHeros > MarvelModel (completion inside fetchHeros: \(marvelModel)\n") // prints 4th of 4
         }
         task.resume()
         
@@ -75,8 +69,6 @@ class ApiClient {
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = HTTPMethods.get
-        //        request.httpBody = try? JSONEncoder().encode(HerosFilter(name: filter)) // NOT required?
-        //        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type") // NOT required?
         
         // TODO: - Implement urlComponents instead of url string bits -
         var urlComponents = URLComponents()
@@ -88,12 +80,13 @@ class ApiClient {
             URLQueryItem(name: "offset", value: "200")
         ]
         
+        print("ApiClient > prepMarvelDataRequest > request: \(request)\n") // print gtg
         return request
     }
 }
 
 enum endpoints: String {
-    case allHeroes = "?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=1&offset=200"
+    case allHeroes = "?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=4&offset=200"
     case thor = "?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&name=Thor"
 }
 
