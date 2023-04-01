@@ -31,7 +31,7 @@ final class HeroViewModel: ObservableObject {
             guard let self = self else { return }
             
             if let heroes = marvelHeroResponse {
-                self.heroes = heroes.data.results
+                self.heroes = heroes.data.results // drilling down to right api level
                 print("HeroViewModel > getHeroes > ApiService.shared.fetchHeros > marvelResponse: \(String(describing: heroes))\n")
             } else {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
@@ -54,7 +54,7 @@ final class HeroViewModel: ObservableObject {
                 print("response: \(response)\n")
                 return $0.data
             }
-            .decode(type: [Result].self, decoder: JSONDecoder())
+            .decode(type: HeroModel.self, decoder: JSONDecoder()) // try HeroModel instead of [Result]
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion{
@@ -66,7 +66,7 @@ final class HeroViewModel: ObservableObject {
                     print("y\n")
                 }
             } receiveValue: { data in
-                self.heroes = data // is this the key???
+                self.heroes = data.data.results // is this the key??? .results???
                 print("getHerosV2 heroes: \(String(describing: self.heroes))\n")
             }
             .store(in: &suscriptors)

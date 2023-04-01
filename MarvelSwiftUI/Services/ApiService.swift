@@ -51,7 +51,7 @@ class ApiService {
                 return
             }
             
-            guard let marvelModel = try? JSONDecoder().decode(HeroModel.self, from: data) else {
+            guard let marvelModel = try? JSONDecoder().decode(HeroModel.self, from: data) else { // HeroModel = full response
                 completion(nil, NetworkError.decodingFailed)
                 return
             }
