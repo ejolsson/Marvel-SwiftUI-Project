@@ -17,8 +17,8 @@ final class HeroViewModel: ObservableObject {
     
     init() {
 //        getHerosTesting() // hardcode values, still get 'No ObservableObject of type' error using this
-//        getHeroes() // uses api call method from previous modules
-        getHerosUsingRequest(filter: "") // result is blank...
+        getHeroes() // uses api call method from previous modules
+//        getHerosUsingRequest(filter: "") // result is blank...
     }
     
     func getHeroes() {
