@@ -43,9 +43,7 @@ struct HeroView: View {
                     ForEach(heroes) { hero in
                         NavigationLink {
 //                            HeroesDetailView(hero: hero)
-                            SeriesView(hero: hero, series: <#T##SeriesResult#>)
-                            SeriesView(hero: hero, series: [])
-                            
+                            SeriesView(hero: hero)
                         } label: {
                             HeroesRowView(hero: hero)
                         }

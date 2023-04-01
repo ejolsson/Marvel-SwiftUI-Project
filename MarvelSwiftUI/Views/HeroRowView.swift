@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeroesRowView: View {
+    
     var hero: Result
     
     var body: some View {

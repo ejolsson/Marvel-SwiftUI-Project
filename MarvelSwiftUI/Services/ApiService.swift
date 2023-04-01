@@ -62,6 +62,8 @@ class ApiService {
     
     func fetchSeries(heroId: Int, completion: @escaping (SeriesModel?, Error?) -> Void) {
         
+        print("heroID: \(heroId)\n")
+        
         var urlComponents = URLComponents()
         urlComponents.queryItems = [
             URLQueryItem(name: "ts", value: "1"),
@@ -73,7 +75,7 @@ class ApiService {
         
         // 1. Build the string
         let urlString: String = "\(ApiService().urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
-        print("urlString: \(urlString)\n")
+        print("fetchSeries > urlString: \(urlString)\n") // valid url, works in browser
         
         // 2. Build the URL (proper)
         guard let urlUrl = URL(string: urlString) else {
@@ -101,8 +103,11 @@ class ApiService {
             
             guard let seriesModel = try? JSONDecoder().decode(SeriesModel.self, from: data) else {
                 completion(nil, NetworkError.decodingFailed)
+                print("\(data)\n") // prints 10416 bytes
                 return
             }
+            print("seriesModel: \(seriesModel)\n")
+            
             completion(seriesModel, nil)
         }
         task.resume()

@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SeriesView: View {
     
-    @EnvironmentObject var viewModel: SeriesViewModel
+    @EnvironmentObject var seriesViewModel: SeriesViewModel
+//    var seriesViewModel: SeriesViewModel // try removing the @env..obj
 //    @State private var filter = ""
     var hero: Result // value should come over with navigation swipe
-    var series: SeriesResult // value obtained from api call // try moving 
+    
     
     var body: some View {
+        
+//        var series: SeriesResult? // value obtained from api call // try moving this variable inside var body.. Works! series no longer asked for in calls
         
         VStack{
             Text("Series")
@@ -25,22 +28,20 @@ struct SeriesView: View {
                 .font(.title)
             Spacer()
             List{
-                if let series = viewModel.series{
+                if let series = seriesViewModel.series{
+            
                     ForEach(series) { series in
-//                        Text(series.title)
-                    label: do {
-                            SeriesRowView(series: series)
-                        }
-                    } //end ForEach
-                } // end if let heros
-            } // end List
-        } // end NavStack
+                        SeriesRowView(series: series).environmentObject(self.seriesViewModel)
+                    }
+                }
+            }
+        }
     }
 }
 
-struct SeriesView_Previews: PreviewProvider {
+struct SeriesView_Previews: PreviewProvider { //works!
     
-    static let hero2 = Result(
+    static let ironMan = Result(
         id: 1009368,
         name: "Iron Man",
         description: "Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.",
@@ -71,20 +72,10 @@ struct SeriesView_Previews: PreviewProvider {
             ],
             returned: 20)
     )
-
-    static let series1 = SeriesResult(
-            id: 16450,
-            title: "A+X (2012 - 2014)",
-            description: "et ready for action-packed stories featuring team-ups from your favorite Marvel heroes every month! First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up! But will each partner's combined strength be enough?",
-            thumbnail: Thumbnail(
-                path: "http://i.annihil.us/u/prod/marvel/i/mg/5/d0/511e88a20ae34",
-                thumbnailExtension: Extension.jpg
-            )
-        )
     
     static var previews: some View {
-//        SeriesView(hero: hero2, series: series1)
-//        SeriesView(hero: <#T##Result#>, series: )
-        SeriesView(hero: hero2, series: series1).environmentObject(SeriesViewModel())
+
+        // WORKS! Shows "A+X..", "Adam..", & "Aero.."
+        SeriesView(hero: ironMan).environmentObject(SeriesViewModel())
     }
 }

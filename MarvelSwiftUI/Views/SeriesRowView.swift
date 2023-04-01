@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct SeriesRowView: View {
+struct SeriesRowView: View { // THIS PART WORKS!!!!
 
     var series: SeriesResult
+//    @ObservableObject var series: SeriesResult
 
     var body: some View {
         VStack{

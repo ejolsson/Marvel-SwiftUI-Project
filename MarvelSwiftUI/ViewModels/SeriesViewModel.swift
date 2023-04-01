@@ -13,27 +13,27 @@ final class SeriesViewModel: ObservableObject {
     @Published var series: [SeriesResult]?
 //    var series: [SeriesResult]? // option w/o @Published
     @Published var status = Status.none
-    @Published var hero: Result // option w/o @Published
+    @Published var hero: Result? // option w/o @Published
 //    var hero: Result // option w/o @Published
     
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        getSeriesTesting()
-//        getSeries(heroId: hero.id) // pub chg fm bckgnd error..
-//        getHerosUsingRequest(filter: "") // result is blank...
+//        getSeriesTesting()
+        getSeries(hero: hero ?? heroDefault) // pub chg fm bckgnd error..
+        // MarvelModel.swift > heroDefault (=Ironman)
     }
     
-    func getSeries(heroId: Int) {
+    func getSeries(hero: Result) {
         
-        ApiService.shared.fetchSeries(heroId: heroId) { [weak self] seriesResponse, error in
+        ApiService.shared.fetchSeries(heroId: hero.id) { [weak self] seriesResponse, error in
             guard let self = self else { return }
             
             if let seriesResponse = seriesResponse {
                 self.series = seriesResponse.data.results
                 print("SeriesViewModel > getSeries > ApiService.shared.fetchSeries > seriesResponse: \(String(describing: seriesResponse))\n")
             } else {
-                print("Error fetching heros: ", error?.localizedDescription ?? "")
+                print("Error fetching series: ", error?.localizedDescription ?? "") // exec arrives at this line
             }
         }
     }
@@ -46,6 +46,6 @@ final class SeriesViewModel: ObservableObject {
         
         let series3 = SeriesResult(id: 27392, title: "Aero (2019 - 2020)", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/00/5d128077da440", thumbnailExtension: Extension.jpg))
         
-        self.series = [series1, series2, series3]
+        self.series = [series1, series2, series3] // func output 'series'
     }
 }

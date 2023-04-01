@@ -16,8 +16,9 @@ final class HeroViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        getHerosTesting()
-//        getHeroes() // pub chg fm bckgnd error..
+//        getHerosTesting()
+        getHeroes() // pub chg fm bckgnd error..
+        
 //        getHerosUsingRequest(filter: "") // result is blank...
     }
     
