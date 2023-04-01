@@ -43,7 +43,7 @@ struct HeroView: View {
                     ForEach(heroes) { hero in
                         NavigationLink {
 //                            HeroesDetailView(hero: hero)
-                            SeriesView(hero: hero)
+                            SeriesView(hero: hero).environmentObject(SeriesViewModel())
                         } label: {
                             HeroesRowView(hero: hero)
                         }
