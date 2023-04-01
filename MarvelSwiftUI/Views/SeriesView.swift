@@ -17,7 +17,7 @@ struct SeriesView: View {
     
     var body: some View {
         
-//        var series: SeriesResult? // value obtained from api call // try moving this variable inside var body.. Works! series no longer asked for in calls
+
         
         VStack{
             Text("Series")
@@ -29,6 +29,7 @@ struct SeriesView: View {
             Spacer()
             List{
                 if let series = seriesViewModel.series{
+                    // .series above gets array fm seriesViewModel > ApiService.shared.fetchSeries(heroId: hero.id)
             
                     ForEach(series) { series in
                         SeriesRowView(series: series).environmentObject(self.seriesViewModel)
