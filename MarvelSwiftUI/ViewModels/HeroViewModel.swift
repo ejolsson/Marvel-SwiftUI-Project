@@ -16,10 +16,9 @@ final class HeroViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-//        getHerosTesting()
-        getHeroes() // pub chg fm bckgnd error..
-        
-//        getHerosUsingRequest(filter: "") // result is blank...
+//        getHerosTesting() // hardcode values, still get 'No ObservableObject of type' error using this
+//        getHeroes() // uses api call method from previous modules
+        getHerosUsingRequest(filter: "") // result is blank...
     }
     
     func getHeroes() {
