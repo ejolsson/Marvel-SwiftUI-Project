@@ -38,7 +38,7 @@ final class HeroViewModel: ObservableObject {
 
     
     func getHerosUsingRequest(filter: String){
-        self.status = .loading
+//        self.status = .loading
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.prepMarvelDataRequest(filter: filter))

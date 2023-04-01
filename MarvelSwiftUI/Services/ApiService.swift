@@ -13,7 +13,7 @@ class ApiService {
     
     let urlBase = "https://gateway.marvel.com:443/v1/public/characters"
     
-    func fetchMarvelData(completion: @escaping (MarvelModel?, Error?) -> Void) {
+    func fetchMarvelData(completion: @escaping (HeroModel?, Error?) -> Void) {
         
         var urlComponents = URLComponents()
         urlComponents.queryItems = [
@@ -51,7 +51,7 @@ class ApiService {
                 return
             }
             
-            guard let marvelModel = try? JSONDecoder().decode(MarvelModel.self, from: data) else {
+            guard let marvelModel = try? JSONDecoder().decode(HeroModel.self, from: data) else {
                 completion(nil, NetworkError.decodingFailed)
                 return
             }
@@ -135,6 +135,30 @@ class ApiService {
         print("ApiService > prepMarvelDataRequest > request: \(request)\n") // print gtg
         return request
     }
+    
+    func prepSeriesRequest(heroId: Int) -> URLRequest {
+        
+        // 1. Build the string
+        let urlString: String = "\(ApiService().urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
+        
+        // 2. Build the url and request
+        var request: URLRequest = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = HTTPMethods.get
+        
+        // TODO: - Implement urlComponents instead of url string bits -
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [
+            URLQueryItem(name: "ts", value: "1"),
+            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
+            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
+            URLQueryItem(name: "limit", value: "1"),
+            URLQueryItem(name: "offset", value: "200")
+        ]
+        
+        print("ApiService > prepMarvelDataRequest > request: \(request)\n") // print gtg
+        return request
+    }
+
 }
 
 enum endpoints: String {
