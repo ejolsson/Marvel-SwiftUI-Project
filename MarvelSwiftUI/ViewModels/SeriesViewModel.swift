@@ -19,8 +19,8 @@ final class SeriesViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        getSeriesTesting()
-//        getSeries(hero: hero ?? heroDefault) // pub chg fm bckgnd error..
+//        getSeriesTesting()
+        getSeries(hero: hero ?? heroDefault) // pub chg fm bckgnd error..
         // MarvelModel.swift > heroDefault (=Ironman)
     }
     

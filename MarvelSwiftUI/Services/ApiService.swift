@@ -64,15 +64,6 @@ class ApiService {
         
         print("heroID: \(heroId)\n")
         
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [
-            URLQueryItem(name: "ts", value: "1"),
-            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
-            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
-            URLQueryItem(name: "limit", value: "1"),
-            URLQueryItem(name: "offset", value: "200")]
-        // prints: ?ts=1&apikey=f0...&hash=a4d....a84&limit=1&offset=200
-        
         // 1. Build the string
         let urlString: String = "\(ApiService().urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
         print("fetchSeries > urlString: \(urlString)\n") // valid url, works in browser
@@ -88,6 +79,7 @@ class ApiService {
         urlRequest.httpMethod = "GET"
         
         // 4. Make API Request
+        // try adding/replacing '.dataTaskPublisher' 
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             guard error == nil else {
                 completion(nil, error)

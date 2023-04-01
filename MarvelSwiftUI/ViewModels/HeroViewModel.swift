@@ -16,15 +16,16 @@ final class HeroViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
+        
 //        getHerosTesting()
-        getHeroes() // uses api call method from previous modules
-//        getHerosUsingRequest() // result is blank...
+//        getHeroes() // uses api call method from previous modules
+        getHerosV2() // result is blank...
         
         // Test prepSeriesRequest - pass!
 //        ApiService.shared.prepSeriesRequest(heroId: 1009368)
     }
     
-    func getHeroes() {
+    func getHeroesV1() { // v1 = iOS fundamentals, advanced
         
         ApiService.shared.fetchHeros { [weak self] marvelHeroResponse, error in
             guard let self = self else { return }
@@ -38,9 +39,8 @@ final class HeroViewModel: ObservableObject {
         }
     }
     
-
     
-    func getHerosUsingRequest(){
+    func getHerosV2(){ // v2 = iOS Super Poderes
 //        self.status = .loading
         
         URLSession.shared
@@ -50,7 +50,8 @@ final class HeroViewModel: ObservableObject {
                       response.statusCode == 200 else{
                     throw URLError(.badServerResponse)
                 }
-                print("A\n")
+                print("\($0.data)\n")
+                print("response: \(response)\n")
                 return $0.data
             }
             .decode(type: [Result].self, decoder: JSONDecoder())
@@ -66,7 +67,7 @@ final class HeroViewModel: ObservableObject {
                 }
             } receiveValue: { data in
                 self.heroes = data // is this the key???
-                print("getHerosUsingRequest heroes: \(String(describing: self.heroes))\n")
+                print("getHerosV2 heroes: \(String(describing: self.heroes))\n")
             }
             .store(in: &suscriptors)
     }

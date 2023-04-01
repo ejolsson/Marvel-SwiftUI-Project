@@ -51,7 +51,7 @@ struct HeroesDetailView: View { // was HerosDetail
                     Spacer()
                     Text(hero.series.items.first?.name ?? "")
                         
-                    let _ = print("hero.series.items.first?.name: \(hero.series.items.first?.name)")
+                    let _ = print("hero.series.items.first?.name: \(String(describing: hero.series.items.first?.name))")
                     
                     let series1 = hero.series.items.prefix(5) // series1 is an array
                     
