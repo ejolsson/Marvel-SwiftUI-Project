@@ -10,25 +10,28 @@ import Combine
 
 final class HeroViewModel: ObservableObject {
     
-    @Published var heroes: [Result]? // used for mock data below
+    @Published var heroes: [Result]?
     @Published var status = Status.none
     
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-//        getHerosTesting() // hardcode values, still get 'No ObservableObject of type' error using this
+//        getHerosTesting()
         getHeroes() // uses api call method from previous modules
-//        getHerosUsingRequest(filter: "") // result is blank...
+//        getHerosUsingRequest() // result is blank...
+        
+        // Test prepSeriesRequest - pass!
+//        ApiService.shared.prepSeriesRequest(heroId: 1009368)
     }
     
     func getHeroes() {
         
-        ApiService.shared.fetchMarvelData { [weak self] marvelResponse, error in
+        ApiService.shared.fetchHeros { [weak self] marvelHeroResponse, error in
             guard let self = self else { return }
             
-            if let marvelResponse = marvelResponse {
-                self.heroes = marvelResponse.data.results
-                print("HeroViewModel > getHeroes > ApiService.shared.fetchMarvelData > marvelResponse: \(String(describing: marvelResponse))\n")
+            if let heroes = marvelHeroResponse {
+                self.heroes = heroes.data.results
+                print("HeroViewModel > getHeroes > ApiService.shared.fetchHeros > marvelResponse: \(String(describing: heroes))\n")
             } else {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
             }
@@ -37,11 +40,11 @@ final class HeroViewModel: ObservableObject {
     
 
     
-    func getHerosUsingRequest(filter: String){
+    func getHerosUsingRequest(){
 //        self.status = .loading
         
         URLSession.shared
-            .dataTaskPublisher(for: ApiService.shared.prepMarvelDataRequest(filter: filter))
+            .dataTaskPublisher(for: ApiService.shared.prepHeroRequest())
             .tryMap{
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{
@@ -68,9 +71,6 @@ final class HeroViewModel: ObservableObject {
             .store(in: &suscriptors)
     }
     
-    
-    
-    //For UI Tesing
     func getHerosTesting(){
         
         let hero1 = Result(

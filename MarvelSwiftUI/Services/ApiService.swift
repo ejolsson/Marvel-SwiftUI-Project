@@ -13,7 +13,7 @@ class ApiService {
     
     let urlBase = "https://gateway.marvel.com:443/v1/public/characters"
     
-    func fetchMarvelData(completion: @escaping (HeroModel?, Error?) -> Void) {
+    func fetchHeros(completion: @escaping (HeroModel?, Error?) -> Void) {
         
         var urlComponents = URLComponents()
         urlComponents.queryItems = [
@@ -113,7 +113,7 @@ class ApiService {
         task.resume()
     }
     
-    func prepMarvelDataRequest(filter:String) -> URLRequest {
+    func prepHeroRequest() -> URLRequest {
         
         // 1. Build the string
         let urlString : String = "\(urlBase)\(endpoints.allHeroes.rawValue)"
@@ -132,14 +132,14 @@ class ApiService {
             URLQueryItem(name: "offset", value: "200")
         ]
         
-        print("ApiService > prepMarvelDataRequest > request: \(request)\n") // print gtg
+        print("ApiService > prepHeroRequest > request: \(request)\n") // print gtg
         return request
     }
     
     func prepSeriesRequest(heroId: Int) -> URLRequest {
         
         // 1. Build the string
-        let urlString: String = "\(ApiService().urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
+        let urlString: String = "\(urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
         
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
@@ -155,7 +155,7 @@ class ApiService {
             URLQueryItem(name: "offset", value: "200")
         ]
         
-        print("ApiService > prepMarvelDataRequest > request: \(request)\n") // print gtg
+        print("ApiService > prepSeriesRequest > request: \(request)\n") // print gtg
         return request
     }
 

@@ -11,13 +11,11 @@ struct SeriesView: View {
     
     @EnvironmentObject var seriesViewModel: SeriesViewModel
 //    var seriesViewModel: SeriesViewModel // try removing the @env..obj
-//    @State private var filter = ""
+
     var hero: Result // value should come over with navigation swipe
     
     
     var body: some View {
-        
-
         
         VStack{
             Text("Series")
@@ -40,7 +38,7 @@ struct SeriesView: View {
     }
 }
 
-struct SeriesView_Previews: PreviewProvider { //works!
+struct SeriesView_Previews: PreviewProvider {
     
     static let ironMan = Result(
         id: 1009368,
