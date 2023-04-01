@@ -5,13 +5,14 @@
 //  Created by Eric Olsson on 3/29/23.
 //
 
-import SwiftUI
+import SwiftUI // TODO: --- REMOVE THIS FILE --- REMOVE THIS FILE --- REMOVE THIS FILE --- REMOVE THIS FILE ---
 
-struct HeroesDetailView: View {
+struct HeroesDetailView: View { // was HerosDetail
     
     @EnvironmentObject var viewModel: HeroViewModel
 //    @StateObject var viewModel: HeroViewModel
     var hero: Result
+//    var heroes: [Result]
     
     var body: some View {
         ScrollView(.vertical){
@@ -49,15 +50,51 @@ struct HeroesDetailView: View {
                         .bold()
                     Spacer()
                     Text(hero.series.items.first?.name ?? "")
-                    Text("Line 1")
-                    Text("Line 2")
-                    Text("Line 3")
-                    Text("Line 4")
-                    Text("Line 5")
+                        
+                    let _ = print("hero.series.items.first?.name: \(hero.series.items.first?.name)")
+                    
+                    let series1 = hero.series.items.prefix(5) // series1 is an array
+                    
+                    let _ = print("hero.series.items.prefix(5): \(hero.series.items.prefix(5))") // array print gtg
+                    
+//                    List(series1.name, rowContent: series1.count) // Cannot convert value of type 'Int' to expected argument type '(Int) -> RowContent'
+                    
+                    // Referencing initializer 'init (_:content:)' on 'ForEach' requires that 'ComicsItem conform to 'Identifiable'
+//                    List(heroes) { hero in
+//                        ForEach(hero.series.items) { item in
+//                            Text(item.name)
+//                        }
+                        
+//                    List {
+//                        ForEach(series1, id: \.self) {serie in
+//                            Text(serie.name)
+//                        }
+//                    }
                     
                     // Create list of series
-                    List{
+//                    List{
 
+//                        let series1 = hero.series.items.prefix(5)
+
+//                        ForEach(series1, id: \.self) { seri in
+//                        Label(series1.name)
+//                        }
+
+//                        if let series2 = hero.series.items.prefix(5) {
+//                            ForEach(series2, id: \.self) { seri in
+//                            Label(series2.name)
+//                            }
+//                        }
+//
+//
+//                        if let series3 = hero.series.items.prefix(5) {
+//                            for item in series3 {
+//                                Text(item.series.name)
+//                            }
+//                        }
+                        
+                        
+                        
 //                        if let series = hero.description{
 //                        if let series = hero.series.items.name{
 //                            print("\(series)\n")
@@ -65,12 +102,16 @@ struct HeroesDetailView: View {
 //                            Text (series)
 //                            } //end ForEach
 //                        } // let series
-                    } // end List
-                } // series 
+                    
+//                    } // end List
+                    
+                    
+                } // Vstack
             } // end VStack
             
         } // end ScrollView
-        .background (Color.blue)
+        
+//        .background (Color.blue)
     }
 }
 

@@ -32,13 +32,20 @@ struct HeroView: View {
 ////            LoaderView() //loader
 //        }
 //        print("heros: \(viewModel.heroes)\n")
-        
+
         NavigationStack{
+            Text("Marvel Heros")
+                .bold()
+                .font(.title)
+            Spacer()
             List{
-                if let heros = viewModel.heroes{
-                    ForEach(heros) { hero in
+                if let heroes = viewModel.heroes{
+                    ForEach(heroes) { hero in
                         NavigationLink {
-                            HeroesDetailView(hero: hero)
+//                            HeroesDetailView(hero: hero)
+                            SeriesView(hero: hero, series: <#T##SeriesResult#>)
+                            SeriesView(hero: hero, series: [])
+                            
                         } label: {
                             HeroesRowView(hero: hero)
                         }
@@ -46,7 +53,7 @@ struct HeroView: View {
                 } // end if let heros
             } // end List
         } // end NavStack
-    }
+    } // end var body
 }
 
 struct HeroView_Previews: PreviewProvider {

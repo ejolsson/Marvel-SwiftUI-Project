@@ -49,7 +49,8 @@ struct Comics: Codable {
 }
 
 // MARK: - ComicsItem
-struct ComicsItem: Codable {
+struct ComicsItem: Codable { //}, Hashable { //}, Identifiable {
+//    let id: Int
     let resourceURI: String
     let name: String
 }

@@ -16,19 +16,19 @@ final class HeroViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-//        getHerosTesting()
-        getHeroes() // pub chg fm bckgnd error..
+        getHerosTesting()
+//        getHeroes() // pub chg fm bckgnd error..
 //        getHerosUsingRequest(filter: "") // result is blank...
     }
     
     func getHeroes() {
         
-        ApiClient.shared.fetchMarvelData { [weak self] marvelResponse, error in
+        ApiService.shared.fetchMarvelData { [weak self] marvelResponse, error in
             guard let self = self else { return }
             
             if let marvelResponse = marvelResponse {
                 self.heroes = marvelResponse.data.results
-                print("ViewController > ViewDidLoad > NetworkLayer.shared.fetchHeros > allheroes: \(String(describing: marvelResponse))\n") // prints 2nd of 4
+                print("HeroViewModel > getHeroes > ApiService.shared.fetchMarvelData > marvelResponse: \(String(describing: marvelResponse))\n")
             } else {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
             }
@@ -41,7 +41,7 @@ final class HeroViewModel: ObservableObject {
         self.status = .loading
         
         URLSession.shared
-            .dataTaskPublisher(for: ApiClient.shared.prepMarvelDataRequest(filter: filter))
+            .dataTaskPublisher(for: ApiService.shared.prepMarvelDataRequest(filter: filter))
             .tryMap{
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{
