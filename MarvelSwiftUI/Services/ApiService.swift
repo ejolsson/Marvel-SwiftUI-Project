@@ -13,7 +13,6 @@ class ApiService {
     
     let urlBase = "https://gateway.marvel.com:443/v1/public/characters"
     
-    // inner part, large func, return response (marvelModel). WORKS!
     func fetchHeros(completion: @escaping (HeroModel?, Error?) -> Void) {
         
         var urlComponents = URLComponents()
@@ -61,7 +60,6 @@ class ApiService {
         task.resume()
     }
     
-    // inner part, large func, return response (seriesModel), success TBD
     func fetchSeries(heroId: Int, completion: @escaping (SeriesModel?, Error?) -> Void) {
         
         print("heroID: \(heroId)\n")
@@ -107,7 +105,6 @@ class ApiService {
         task.resume()
     }
     
-    // getHerosV2 inner part, small func, return request. WORKS e2e!!
     func heroRequest() -> URLRequest {
         
         // 1. Build the string
@@ -131,7 +128,6 @@ class ApiService {
         return request
     }
     
-    // getSeriesV2 inner part, small func, return request. Req WORKS
     func seriesRequest(heroId: Int) -> URLRequest {
         
         // 1. Build the string

@@ -10,13 +10,10 @@ import SwiftUI
 struct SeriesView: View {
     
     @EnvironmentObject var seriesViewModel: SeriesViewModel
-//    var seriesViewModel: SeriesViewModel // try removing the @env..obj
-
     var hero: Result // value should come over with navigation swipe
     
-    
     var body: some View {
-        
+        let series = seriesViewModel.series
         VStack{
             Text("Series")
                 .bold()
@@ -26,13 +23,13 @@ struct SeriesView: View {
                 .font(.title)
             Spacer()
             List{
-                if let series = seriesViewModel.series{
-                    // .series above gets array fm seriesViewModel > ApiService.shared.fetchSeries(heroId: hero.id)
-            
                     ForEach(series) { series in
                         SeriesRowView(series: series).environmentObject(self.seriesViewModel)
                     }
-                }
+            }
+            .onAppear {
+                seriesViewModel.getSeriesV2(hero: hero)
+                let _ = print("series: \(series)\n")
             }
         }
     }
@@ -74,7 +71,6 @@ struct SeriesView_Previews: PreviewProvider {
     
     static var previews: some View {
 
-        // WORKS! Shows "A+X..", "Adam..", & "Aero.."
         SeriesView(hero: ironMan).environmentObject(SeriesViewModel())
     }
 }

@@ -13,26 +13,26 @@ struct HeroView: View {
     @State private var filter = ""
     
     var body: some View {
-
+        let heroes = viewModel.heroes
         NavigationStack{
             Text("Marvel Heros")
                 .bold()
                 .font(.title)
             Spacer()
             List{
-                if let heroes = viewModel.heroes{
                     ForEach(heroes) { hero in
                         NavigationLink {
-//                            HeroesDetailView(hero: hero)
                             SeriesView(hero: hero).environmentObject(SeriesViewModel())
                         } label: {
                             HeroesRowView(hero: hero)
                         }
-                    } //end ForEach
-                } // end if let heros
-            } // end List
-        } // end NavStack
-    } // end var body
+                    }
+            }
+            .onAppear{
+                viewModel.getHerosV2() // will save heroes @Published
+            }
+        }
+    }
 }
 
 struct HeroView_Previews: PreviewProvider {

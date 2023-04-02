@@ -11,22 +11,18 @@ import SwiftUI
 
 final class HeroViewModel: ObservableObject {
     
-    @Published var heroes: [Result]?
+    @Published var heroes = [Result]()
     @Published var status = Status.none
     
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        
-//        getHerosTesting() // works well!
-        
-//        getHeroes() // works well!
-        
-        getHerosV2() // works well! uses .dataTaskPublsiher
-//        ApiService.shared.seriesRequest(heroId: 1009368) // Test seriesRequest - pass!
+//        getHerosTesting()
+//        getHeroes()
+//        getHerosV2()
     }
     
-    func getHeroesV1() { // v1 = iOS fundamentals, advanced
+    func getHeroesV1() {
         
         ApiService.shared.fetchHeros { [weak self] marvelHeroResponse, error in
             guard let self = self else { return }
@@ -40,9 +36,7 @@ final class HeroViewModel: ObservableObject {
         }
     }
     
-    
-    func getHerosV2(){ // v2 = iOS Super Poderes
-//        self.status = .loading
+    func getHerosV2(){
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.heroRequest())

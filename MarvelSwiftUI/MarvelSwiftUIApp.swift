@@ -11,17 +11,15 @@ import SwiftUI
 struct MarvelSwiftUIApp: App {
     
     @StateObject var heroViewModel = HeroViewModel()
-    
-    // This is not right. It splits the main screen in half with the two views in the WindowGroup...
-//    @StateObject var seriesViewModel = SeriesViewModel()
-//    var hero: Result?
+    @StateObject var seriesViewModel = SeriesViewModel()
     
     var body: some Scene {
     
         WindowGroup {
 
-            HeroView().environmentObject(heroViewModel)
-//            SeriesView(hero: hero ?? heroDefault).environmentObject(seriesViewModel) // adding this to see if helps
+            HeroView()
+                .environmentObject(heroViewModel)
+                .environmentObject(seriesViewModel)
         }
     }
 }

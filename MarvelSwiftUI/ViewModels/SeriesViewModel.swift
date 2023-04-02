@@ -10,21 +10,13 @@ import Combine
 
 final class SeriesViewModel: ObservableObject {
     
-    @Published var series: [SeriesResult]?
-//    var series: [SeriesResult]? // option w/o @Published
+    @Published var series = [SeriesResult]()
     @Published var status = Status.none
-    @Published var hero: Result? // option w/o @Published
-//    var hero: Result // option w/o @Published
+    @Published var hero: Result?
     
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-        
-//        getSeriesTesting() // Works well!
-        
-//        getSeriesV1(hero: self.hero ?? heroDefault)// ?? heroDefault)
-        
-        getSeriesV2(hero: self.hero ?? heroDefault)
     }
     
     func getSeriesV1(hero: Result) {
@@ -41,8 +33,7 @@ final class SeriesViewModel: ObservableObject {
         }
     }
     
-    func getSeriesV2(hero: Result) { // v2 = iOS Super Poderes
-//        self.status = .loading
+    func getSeriesV2(hero: Result) {
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.seriesRequest(heroId: hero.id))
@@ -52,7 +43,7 @@ final class SeriesViewModel: ObservableObject {
                     throw URLError(.badServerResponse)
                 }
                 print("\($0.data)\n")
-                print("response: \(response)\n")
+                print("getSeriesV2 response: \(response)\n")
                 return $0.data
             }
             .decode(type: SeriesModel.self, decoder: JSONDecoder())
@@ -81,6 +72,6 @@ final class SeriesViewModel: ObservableObject {
         
         let series3 = SeriesResult(id: 27392, title: "Aero (2019 - 2020)", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/00/5d128077da440", thumbnailExtension: Extension.jpg))
         
-        self.series = [series1, series2, series3] // func output 'series'
+        self.series = [series1, series2, series3]
     }
 }
