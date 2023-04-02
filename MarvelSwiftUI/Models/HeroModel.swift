@@ -21,20 +21,8 @@ struct Result: Codable, Identifiable {
     let id: Int
     let name, description: String
     let thumbnail: Thumbnail
-    let series: Comics
+    let series: Comics // don't need this. get fm 2nd api call.
 
-}
-
-struct Comics: Codable {
-    let available: Int
-    let collectionURI: String
-    let items: [ComicsItem]
-    let returned: Int
-}
-
-struct ComicsItem: Codable {
-    let resourceURI: String
-    let name: String
 }
 
 struct Thumbnail: Codable {
@@ -49,6 +37,20 @@ struct Thumbnail: Codable {
 
 enum Extension: String, Codable {
     case jpg = "jpg"
+}
+
+// MARK: - LIKELY DON'T NEED THE ITEMS BELOW -
+
+struct Comics: Codable {
+    let available: Int
+    let collectionURI: String
+    let items: [ComicsItem]
+    let returned: Int
+}
+
+struct ComicsItem: Codable {
+    let resourceURI: String
+    let name: String
 }
 
 let heroDefault = Result(

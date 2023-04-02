@@ -19,23 +19,56 @@ final class SeriesViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
+        
 //        getSeriesTesting()
-        getSeries(hero: hero ?? heroDefault) // pub chg fm bckgnd error..
-        // MarvelModel.swift > heroDefault (=Ironman)
+        getSeriesV1(hero: self.hero ?? heroDefault)// ?? heroDefault)
+//        getSeriesV2(hero: self.hero ?? heroDefault)
     }
     
-    func getSeries(hero: Result) {
+    func getSeriesV1(hero: Result) {
         
         ApiService.shared.fetchSeries(heroId: hero.id) { [weak self] seriesResponse, error in
             guard let self = self else { return }
             
             if let seriesResponse = seriesResponse {
                 self.series = seriesResponse.data.results
-                print("SeriesViewModel > getSeries > ApiService.shared.fetchSeries > seriesResponse: \(String(describing: seriesResponse))\n")
+                print("SeriesViewModel > getSeriesV1 > ApiService.shared.fetchSeries > seriesResponse: \(String(describing: seriesResponse))\n")
             } else {
                 print("Error fetching series: ", error?.localizedDescription ?? "") // exec arrives at this line
             }
         }
+    }
+    
+    func getSeriesV2(hero: Result) { // v2 = iOS Super Poderes
+//        self.status = .loading
+        
+        URLSession.shared
+            .dataTaskPublisher(for: ApiService.shared.seriesRequest(heroId: hero.id))
+            .tryMap{
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else{
+                    throw URLError(.badServerResponse)
+                }
+                print("\($0.data)\n")
+                print("response: \(response)\n")
+                return $0.data
+            }
+            .decode(type: SeriesModel.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion{
+                case .failure:
+                    self.status = Status.error(error: "Error finding heroes")
+                    print("series sink failure\n")
+                case .finished:
+                    self.status = .loaded
+                    print("series sink finished\n")
+                }
+            } receiveValue: { data in
+                self.series = data.data.results // is this the key??? .results???
+                print("getSeriesV2 series: \(String(describing: self.series))\n")
+            }
+            .store(in: &suscriptors)
     }
     
     func getSeriesTesting() {
