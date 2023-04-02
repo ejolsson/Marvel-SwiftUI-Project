@@ -20,9 +20,11 @@ final class SeriesViewModel: ObservableObject {
     
     init() {
         
-//        getSeriesTesting()
-        getSeriesV1(hero: self.hero ?? heroDefault)// ?? heroDefault)
-//        getSeriesV2(hero: self.hero ?? heroDefault)
+//        getSeriesTesting() // Works well!
+        
+//        getSeriesV1(hero: self.hero ?? heroDefault)// ?? heroDefault)
+        
+        getSeriesV2(hero: self.hero ?? heroDefault)
     }
     
     func getSeriesV1(hero: Result) {

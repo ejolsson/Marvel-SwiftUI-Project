@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class HeroViewModel: ObservableObject {
     
@@ -17,12 +18,12 @@ final class HeroViewModel: ObservableObject {
     
     init() {
         
-//        getHerosTesting()
-//        getHeroes() // uses api call method from previous modules
-        getHerosV2() // result is blank...
+//        getHerosTesting() // works well!
         
-        // Test prepSeriesRequest - pass!
-//        ApiService.shared.prepSeriesRequest(heroId: 1009368)
+//        getHeroes() // works well!
+        
+        getHerosV2() // works well! uses .dataTaskPublsiher
+//        ApiService.shared.seriesRequest(heroId: 1009368) // Test seriesRequest - pass!
     }
     
     func getHeroesV1() { // v1 = iOS fundamentals, advanced
@@ -44,7 +45,7 @@ final class HeroViewModel: ObservableObject {
 //        self.status = .loading
         
         URLSession.shared
-            .dataTaskPublisher(for: ApiService.shared.prepHeroRequest())
+            .dataTaskPublisher(for: ApiService.shared.heroRequest())
             .tryMap{
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{
@@ -60,10 +61,10 @@ final class HeroViewModel: ObservableObject {
                 switch completion{
                 case .failure:
                     self.status = Status.error(error: "Error finding heroes")
-                    print("X\n")
+                    print("heroes sink failure\n")
                 case .finished:
                     self.status = .loaded
-                    print("y\n")
+                    print("heroes sink finished\n")
                 }
             } receiveValue: { data in
                 self.heroes = data.data.results // is this the key??? .results???
