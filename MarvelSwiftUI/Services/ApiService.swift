@@ -131,7 +131,7 @@ class ApiService {
     func seriesRequest(heroId: Int) -> URLRequest {
         
         // 1. Build the string
-        let urlString: String = "\(urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
+        let urlString: String = "\(urlBase)/\(heroId)/\(endpoints.series.rawValue)&characterId=\(heroId)"
         
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
