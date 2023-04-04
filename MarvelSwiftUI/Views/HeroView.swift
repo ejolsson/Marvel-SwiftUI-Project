@@ -18,13 +18,16 @@ struct HeroView: View {
             Text("Marvel Heros")
                 .bold()
                 .font(.title)
+                .id(0) // added for testing and item id
             Spacer()
             List{
                     ForEach(heroes) { hero in
                         NavigationLink {
                             SeriesView(hero: hero).environmentObject(SeriesViewModel())
+                                .id(1)
                         } label: {
                             HeroesRowView(hero: hero)
+                                .id(2)
                         }
                     }
             }

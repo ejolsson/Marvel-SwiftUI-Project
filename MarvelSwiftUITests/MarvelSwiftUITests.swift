@@ -12,8 +12,6 @@ import Combine
 
 final class MarvelSwiftUITests: XCTestCase {
 
-//    var hero: Result?
-//    var seriesView = SeriesView()
     let SeriewView: SeriesView? = nil
 
     override func setUpWithError() throws {
@@ -23,28 +21,12 @@ final class MarvelSwiftUITests: XCTestCase {
         override func tearDownWithError() throws {
             // Put teardown code here. This method is called after the invocation of each test method in the class.
         }
-    
-//    override func setUp() {
-//        super.setUp()
-//
-//    }
-            
-//    override func tearDown()  {
-//        hero = nil
-//        super.tearDown()
-//    }
-    
-//    func testHeroId() {
-//        XCTAssertNotNil(hero.id)
-//        XCTAssertEqual(hero.id, 1009368)
-//        XCTAssertNotEqual(hero.id, 100000)
-//        XCTAssertNotEqual(hero.id, 99999)
-//    }
 
     func testExample() throws {
         XCTAssertEqual(1, 1)
     }
  
+    // Model testing
     func testModels() throws {
         let hero = Result(
             id: 1009368,
@@ -101,4 +83,20 @@ final class MarvelSwiftUITests: XCTestCase {
 
     }
 
+    // UI testing
+    func testHeroView() throws {
+        
+        let view = HeroView().environmentObject(HeroViewModel())
+        
+        XCTAssertNotNil(view)
+        
+        let numItems = try view.inspect().count
+        XCTAssertEqual(numItems, 1)
+        
+        let text = try view.inspect().find(viewWithId: 0)
+        XCTAssertNotNil(text)
+        
+        let textBanner = try text.text().string()
+        XCTAssertEqual(textBanner, "Marvel Heros")
+    }
 }
