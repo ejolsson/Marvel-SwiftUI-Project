@@ -36,6 +36,8 @@
 		4AFB930B29CF103200616EA4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB930929CF103200616EA4 /* ApiService.swift */; };
 		4AFB930D29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB930C29CF1EEA00616EA4 /* HeroViewModel.swift */; };
 		4AFB930E29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB930C29CF1EEA00616EA4 /* HeroViewModel.swift */; };
+		4AFCCF1929DC7A60006F6550 /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A95D52829D6E3CB00498D5B /* SeriesView.swift */; };
+		4AFCCF1A29DC7A61006F6550 /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A95D52829D6E3CB00498D5B /* SeriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -376,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFCCF1929DC7A60006F6550 /* SeriesView.swift in Sources */,
 				4A0F62C829D302C40016F855 /* StatusModel.swift in Sources */,
 				4AFB930E29CF1EEA00616EA4 /* HeroViewModel.swift in Sources */,
 				4A0F62CB29D304960016F855 /* HeroView.swift in Sources */,
@@ -398,6 +401,7 @@
 				4A0F62CC29D304960016F855 /* HeroView.swift in Sources */,
 				4A61C32829CEEA87001C898C /* HeroModel.swift in Sources */,
 				4A2EE1FD29D5EAE500C8093D /* SeriesRowView.swift in Sources */,
+				4AFCCF1A29DC7A61006F6550 /* SeriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
