@@ -20,13 +20,16 @@ struct SeriesRowView: View {
                     .cornerRadius(10)
                     .padding([.leading, .trailing], 20)
                     .opacity(0.6)
+                    .id(8)
             } placeholder: {
                 Text("Downloading photo...")
+                    .id(9)
             }
             Text("\(series.title)")
                 .font(.title)
                 .foregroundColor(.gray)
                 .bold()
+                .id(10)
         }
     }
 }

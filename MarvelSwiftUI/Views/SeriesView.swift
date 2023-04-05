@@ -18,9 +18,11 @@ struct SeriesView: View {
             Text("Series")
                 .bold()
                 .font(.title)
+                .id(3)
             Text(hero.name)
                 .bold()
                 .font(.title)
+                .id(4)
             Spacer()
             List{
                     ForEach(series) { series in

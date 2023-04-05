@@ -20,13 +20,16 @@ struct HeroesRowView: View {
                     .cornerRadius(10)
                     .padding([.leading, .trailing], 20)
                     .opacity(0.6)
+                    .id(5)
             } placeholder: {
                 Text("Downloading photo...")
+                    .id(6)
             }
             Text("\(hero.name)")
                 .font(.title)
                 .foregroundColor(.gray)
                 .bold()
+                .id(7)
         }
     }
 }
