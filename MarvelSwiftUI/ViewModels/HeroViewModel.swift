@@ -39,7 +39,7 @@ final class HeroViewModel: ObservableObject {
     func getHerosV2(){
         
         URLSession.shared
-            .dataTaskPublisher(for: ApiService.shared.heroRequest())
+            .dataTaskPublisher(for: ApiService.shared.heroRequest()) // returns URLRequest
             .tryMap{
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{

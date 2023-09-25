@@ -36,6 +36,7 @@ class ApiService {
         // 3. Build the URL Request
         var urlRequest = URLRequest(url: urlUrl)
         urlRequest.httpMethod = "GET"
+        print("urlRequest = \(urlRequest)")
         
         // 4. Make API Request
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in

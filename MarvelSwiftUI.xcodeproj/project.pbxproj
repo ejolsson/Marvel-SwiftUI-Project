@@ -25,6 +25,8 @@
 		4A61C32629CEEA87001C898C /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* HeroModel.swift */; };
 		4A61C32729CEEA87001C898C /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* HeroModel.swift */; };
 		4A61C32829CEEA87001C898C /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C32529CEEA87001C898C /* HeroModel.swift */; };
+		4A88F80A2ABDEEE700139E55 /* herolist.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A88F8092ABDEEE700139E55 /* herolist.png */; };
+		4A88F80C2ABDEF1500139E55 /* detailview.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A88F80B2ABDEF1500139E55 /* detailview.png */; };
 		4A95D52929D6E3CB00498D5B /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A95D52829D6E3CB00498D5B /* SeriesView.swift */; };
 		4A9A66E029D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
 		4A9A66E129D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
@@ -71,6 +73,8 @@
 		4A61C30329CEDECB001C898C /* MarvelSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61C30D29CEDECB001C898C /* MarvelSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61C32529CEEA87001C898C /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		4A88F8092ABDEEE700139E55 /* herolist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = herolist.png; sourceTree = "<group>"; };
+		4A88F80B2ABDEF1500139E55 /* detailview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailview.png; sourceTree = "<group>"; };
 		4A95D52829D6E3CB00498D5B /* SeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesView.swift; sourceTree = "<group>"; };
 		4A9A66DF29D45B1900227423 /* HeroRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRowView.swift; sourceTree = "<group>"; };
 		4A9A66E329D45E5D00227423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				4AB44F7E29D97F4A00776012 /* MarvelSwiftUIUITests */,
 				4A61C2F329CEDEC9001C898C /* Products */,
 				4A95D52329D6DE6A00498D5B /* Frameworks */,
+				4AE857072ABDE93E007EF349 /* Screenshots */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +223,15 @@
 				4AB44F8229D9824400776012 /* MarvelSwiftUIUITests.swift */,
 			);
 			path = MarvelSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		4AE857072ABDE93E007EF349 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				4A88F8092ABDEEE700139E55 /* herolist.png */,
+				4A88F80B2ABDEF1500139E55 /* detailview.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A88F80A2ABDEEE700139E55 /* herolist.png in Resources */,
 				4A61C2FE29CEDECB001C898C /* Preview Assets.xcassets in Resources */,
 				4A61C2FA29CEDECB001C898C /* Assets.xcassets in Resources */,
+				4A88F80C2ABDEF1500139E55 /* detailview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +559,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelSwiftUI/Info.plist;
@@ -583,6 +600,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelSwiftUI/Info.plist;
