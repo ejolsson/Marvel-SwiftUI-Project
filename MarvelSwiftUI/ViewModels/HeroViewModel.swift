@@ -36,7 +36,7 @@ final class HeroViewModel: ObservableObject {
         }
     }
     
-    func getHerosV2(){
+    func getHerosV2(){ // async method
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.heroRequest()) // returns URLRequest
@@ -45,8 +45,6 @@ final class HeroViewModel: ObservableObject {
                       response.statusCode == 200 else{
                     throw URLError(.badServerResponse)
                 }
-                print("\($0.data)\n")
-                print("response: \(response)\n")
                 return $0.data
             }
             .decode(type: HeroModel.self, decoder: JSONDecoder()) // try HeroModel instead of [Result]
@@ -61,8 +59,8 @@ final class HeroViewModel: ObservableObject {
                     print("heroes sink finished\n")
                 }
             } receiveValue: { data in
-                self.heroes = data.data.results // is this the key??? .results???
-                print("getHerosV2 heroes: \(String(describing: self.heroes))\n")
+                self.heroes = data.data.results
+                print("getHerosV2 heroes: \(String(describing: self.heroes.first))\n")
             }
             .store(in: &suscriptors)
     }

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>61</string>
+					<key>StartingColumnNumber</key>
+					<string>81</string>
+					<key>StartingLineNumber</key>
+					<string>60</string>
+					<key>Timestamp</key>
+					<string>717338533.082154</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>MarvelSwiftUI/ViewModels/SeriesViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>
+</string>
+				<key>leading</key>
+				<string>                }
+            } receiveValue: { data in
+                self.series = data.data.results</string>
+				<key>trailing</key>
+				<string>                print("getSeriesV2 series: \(String(describing: self.series))\n")
+            }
+            .store(in: &amp;suscriptors)
+</string>
+			</dict>
+			<key>title</key>
+			<string>logic to assign api response result to series value</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>62</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>61</string>
+					<key>Timestamp</key>
+					<string>718029033.844804</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>MarvelSwiftUI/ViewModels/HeroViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                self.heroes = data.data.results
+</string>
+				<key>leading</key>
+				<string>                }
+            } receiveValue: { data in
+</string>
+				<key>trailing</key>
+				<string>                print("getHerosV2 heroes: \(String(describing: self.heroes.first))\n")
+            }
+            .store(in: &amp;suscriptors)
+</string>
+			</dict>
+			<key>title</key>
+			<string>logic to assign api response result to heroes value</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>126</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>125</string>
+					<key>Timestamp</key>
+					<string>718029437.359663</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>MarvelSwiftUI/Services/ApiService.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        // 1. Build the string
+</string>
+				<key>leading</key>
+				<string>    func heroRequest() -&gt; URLRequest {
+        
+</string>
+				<key>trailing</key>
+				<string>        let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
+        print("heroRequest &gt; urlString: \(urlString)\n") // Expect "", print is null
+        
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>126</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>125</string>
+					<key>Timestamp</key>
+					<string>718029437.3596441</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>MarvelSwiftUI/Services/ApiService.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        // 1. Build the string
+</string>
+				<key>leading</key>
+				<string>    func heroRequest() -&gt; URLRequest {
+        
+</string>
+				<key>trailing</key>
+				<string>        let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
+        print("heroRequest &gt; urlString: \(urlString)\n") // Expect "", print is null
+        
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>19</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>18</string>
+					<key>Timestamp</key>
+					<string>718028682.6848561</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>MarvelSwiftUI/Services/ApiService.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        
+</string>
+				<key>leading</key>
+				<string>
+    static let shared = ApiService()
+</string>
+				<key>trailing</key>
+				<string>    let ts = "1"
+    let apiKey: String = { ProcessInfo.processInfo.environment["API_KEY"] ?? ""}()
+    let hash: String = { ProcessInfo.processInfo.environment["HASH"] ?? ""}()
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>

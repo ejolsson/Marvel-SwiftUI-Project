@@ -7,25 +7,41 @@
 
 import Foundation
 
+let urlBase = "https://gateway.marvel.com"
+
+enum endpoints: String {
+    case characters = "/v1/public/characters"
+}
+
 class ApiService {
 
     static let shared = ApiService()
+        
+    let ts = "1"
+    let apiKey: String = { ProcessInfo.processInfo.environment["API_KEY"] ?? ""}()
+    let hash: String = { ProcessInfo.processInfo.environment["HASH"] ?? ""}()
+    let limit = "5"
     
-    let urlBase = "https://gateway.marvel.com:443/v1/public/characters"
+    // 1. Build the request string
+    private func buildURLString (endpoint: String, subPath: String = "", offset: String) -> String {
+        
+        var urlComponents = URLComponents(string: urlBase)
+        urlComponents?.path += endpoint + subPath
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "ts", value: ts),
+            URLQueryItem(name: "apikey", value: apiKey),
+            URLQueryItem(name: "hash", value: hash),
+            URLQueryItem(name: "limit", value: limit),
+            URLQueryItem(name: "offset", value: offset)
+        ]
+        print("buildString: \(String(describing: urlComponents?.url?.absoluteString))\n")
+        return urlComponents?.url?.absoluteString ?? ""
+    }
     
     func fetchHeros(completion: @escaping (HeroModel?, Error?) -> Void) {
         
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [
-            URLQueryItem(name: "ts", value: "1"),
-            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
-            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
-            URLQueryItem(name: "limit", value: "1"),
-            URLQueryItem(name: "offset", value: "200")]
-        // prints: ?ts=1&apikey=f0...&hash=a4d....a84&limit=1&offset=200
-        
-        // 1. Build the string
-        let urlString: String = "\(ApiService().urlBase)\(endpoints.allHeroes.rawValue)"
+        // 1. Configure the url string
+        let urlString = buildURLString(endpoint: endpoints.characters.rawValue, offset: "200")
         
         // 2. Build the URL (proper)
         guard let urlUrl = URL(string: urlString) else {
@@ -66,7 +82,7 @@ class ApiService {
         print("heroID: \(heroId)\n")
         
         // 1. Build the string
-        let urlString: String = "\(ApiService().urlBase)/\(heroId)\(endpoints.series.rawValue)&characterId=\(heroId)"
+        let urlString = buildURLString(endpoint: endpoints.characters.rawValue, offset: "")
         print("fetchSeries > urlString: \(urlString)\n") // valid url, works in browser
         
         // 2. Build the URL (proper)
@@ -80,7 +96,6 @@ class ApiService {
         urlRequest.httpMethod = "GET"
         
         // 4. Make API Request
-        // try adding/replacing '.dataTaskPublisher' 
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             guard error == nil else {
                 completion(nil, error)
@@ -104,61 +119,32 @@ class ApiService {
             completion(seriesModel, nil)
         }
         task.resume()
-    }
+    } // used in getHeroesV1, which is not used
     
     func heroRequest() -> URLRequest {
         
         // 1. Build the string
-        let urlString : String = "\(urlBase)\(endpoints.allHeroes.rawValue)"
+        let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
+        print("heroRequest > urlString: \(urlString)\n") // Expect "", print is null
         
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = HTTPMethods.get
-        
-        // TODO: - Implement urlComponents instead of url string bits -
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [
-            URLQueryItem(name: "ts", value: "1"),
-            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
-            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
-            URLQueryItem(name: "limit", value: "1"),
-            URLQueryItem(name: "offset", value: "200")
-        ]
-        
-        print("ApiService > heroRequest > request: \(request)\n") // print gtg
         return request
     }
     
     func seriesRequest(heroId: Int) -> URLRequest {
         
         // 1. Build the string
-        let urlString: String = "\(urlBase)/\(heroId)/\(endpoints.series.rawValue)&characterId=\(heroId)"
+        let urlString = buildURLString(endpoint: endpoints.characters.rawValue, subPath: "/\(heroId)/series", offset: "")
+        print("seriesRequest > urlString: \(urlString)\n")
         
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = HTTPMethods.get
         
-        // TODO: - Implement urlComponents instead of url string bits -
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [
-            URLQueryItem(name: "ts", value: "1"),
-            URLQueryItem(name: "apikey", value: "f0c5210c2332d5d32edc3a40552edb27"),
-            URLQueryItem(name: "hash", value: "a4d396a1143f5258c6cced5dc9863a84"),
-            URLQueryItem(name: "limit", value: "1"),
-            URLQueryItem(name: "offset", value: "200")
-        ]
-        
-        print("ApiService > seriesRequest > request: \(request)\n") // print gtg
         return request
     }
-
-}
-
-enum endpoints: String {
-    case allHeroes = "?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=10&offset=200"
-    case thorCharacter = "?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&name=Thor"
-    case ironManSeries = "1009368/series?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=10&characterId=1009368"
-    case series = "series?ts=1&apikey=f0c5210c2332d5d32edc3a40552edb27&hash=a4d396a1143f5258c6cced5dc9863a84&limit=10"
 }
 
 struct HTTPMethods {

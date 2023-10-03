@@ -19,7 +19,7 @@ final class SeriesViewModel: ObservableObject {
     init() {
     }
     
-    func getSeriesV1(hero: Result) {
+    func getSeriesV1(hero: Result) { // not used, older way
         
         ApiService.shared.fetchSeries(heroId: hero.id) { [weak self] seriesResponse, error in
             guard let self = self else { return }
@@ -31,7 +31,7 @@ final class SeriesViewModel: ObservableObject {
                 print("Error fetching series: ", error?.localizedDescription ?? "") // exec arrives at this line
             }
         }
-    }
+    } // not used, older way
     
     func getSeriesV2(hero: Result) {
         
@@ -58,7 +58,7 @@ final class SeriesViewModel: ObservableObject {
                     print("series sink finished\n")
                 }
             } receiveValue: { data in
-                self.series = data.data.results // is this the key??? .results???
+                self.series = data.data.results
                 print("getSeriesV2 series: \(String(describing: self.series))\n")
             }
             .store(in: &suscriptors)
