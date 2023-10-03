@@ -30,11 +30,7 @@ When you tap on the Hero, you will see the detail showing the
 3. Title 
 4. Description
 
-It will be necessary to add testing on the code of the App.
-
-Optional: Every time a data load is being carried out we will put a loading screen.
-
-# Screenshots / Capturas de pantalla
+# Screenshots
 
 |   Main Screen            |
 |--------------------------|
@@ -47,8 +43,8 @@ Optional: Every time a data load is being carried out we will put a loading scre
 
 <!-- 
 Main Screen
-![App Screenshot](./screenshots/app_main_screen.png)
+![App Screenshot](./screenshots/herolist.png)
 
 Detail Screen
-![App Screenshot](./screenshots/app_detail_screen.png)
+![App Screenshot](./screenshots/detailview.png)
 -->
