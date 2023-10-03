@@ -34,11 +34,11 @@ When you tap on the Hero, you will see the detail showing the
 
 |   Main Screen            |
 |--------------------------|
-| <img src="./screenshots/herolist.png" width="300" alt="Main Screen"> |
+| <img src="./Screenshots/herolist.png" width="300" alt="Main Screen"> |
 |--------------------------|
 |   Detail Screen          |
 |--------------------------|
-| <img src="./screenshots/detailview.png" width="300" alt="Detail Screen"> |
+| <img src="./Screenshots/detailview.png" width="300" alt="Detail Screen"> |
 |--------------------------|
 
 <!-- 
