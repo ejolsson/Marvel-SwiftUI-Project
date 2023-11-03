@@ -19,10 +19,12 @@ final class HeroViewModel: ObservableObject {
     init() {
 //        getHerosTesting()
 //        getHeroes()
-//        getHerosV2()
+        getHerosV2()
     }
     
     func getHeroesV1() {
+        
+        self.status = Status.loading
         
         ApiService.shared.fetchHeros { [weak self] marvelHeroResponse, error in
             guard let self = self else { return }
@@ -37,12 +39,15 @@ final class HeroViewModel: ObservableObject {
     }
     
     func getHerosV2(){ // async method
+        print("Hi!")
+        self.status = Status.loading
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.heroRequest()) // returns URLRequest
             .tryMap{
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{
+//                    self.status = Status.error(error: "Server error")
                     throw URLError(.badServerResponse)
                 }
                 return $0.data
@@ -55,8 +60,8 @@ final class HeroViewModel: ObservableObject {
                     self.status = Status.error(error: "Error finding heroes")
                     print("heroes sink failure\n")
                 case .finished:
-                    self.status = .loaded
-                    print("heroes sink finished\n")
+                    self.status = Status.loaded
+                    print("heroes sink finished, status = \(self.status)\n")
                 }
             } receiveValue: { data in
                 self.heroes = data.data.results
@@ -138,6 +143,7 @@ final class HeroViewModel: ObservableObject {
                 returned: 20)
         )
         self.heroes = [hero1, hero2, hero3]
+        self.status = Status.loaded
     }
     
 }

@@ -17,9 +17,10 @@ struct MarvelSwiftUIApp: App {
     
         WindowGroup {
 
-            HeroView()
+            MainView()
+//            HeroView()
                 .environmentObject(heroViewModel)
-                .environmentObject(seriesViewModel)
+//                .environmentObject(seriesViewModel)
         }
     }
 }
