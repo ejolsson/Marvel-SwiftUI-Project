@@ -21,18 +21,15 @@ struct HeroView: View {
                 .id(0) // added for testing and item id
             Spacer()
             List{
-                    ForEach(heroes) { hero in
-                        NavigationLink {
-                            SeriesView(hero: hero).environmentObject(SeriesViewModel())
-                                .id(1)
-                        } label: {
-                            HeroesRowView(hero: hero)
-                                .id(2)
-                        }
+                ForEach(heroes) { hero in
+                    NavigationLink {
+                        SeriesView(hero: hero).environmentObject(SeriesViewModel())
+                            .id(1)
+                    } label: {
+                        HeroesRowView(hero: hero)
+                            .id(2)
                     }
-            }
-            .onAppear{
-                viewModel.getHerosV2() // will save heroes @Published
+                }
             }
         }
     }

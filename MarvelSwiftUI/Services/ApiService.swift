@@ -34,7 +34,7 @@ class ApiService {
             URLQueryItem(name: "limit", value: limit),
             URLQueryItem(name: "offset", value: offset)
         ]
-        print("buildString: \(String(describing: urlComponents?.url?.absoluteString))\n")
+        print("buildString: \(String(describing: urlComponents?.url?.absoluteString))")
         return urlComponents?.url?.absoluteString ?? ""
     }
     
@@ -125,7 +125,7 @@ class ApiService {
         
         // 1. Build the string
         let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
-        print("heroRequest > urlString: \(urlString)\n") // Expect "", print is null
+        print("heroRequest > urlString: \(urlString)")
         
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)

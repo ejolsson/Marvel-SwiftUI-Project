@@ -17,12 +17,43 @@ final class HeroViewModel: ObservableObject {
     var suscriptors = Set<AnyCancellable>()
     
     init() {
-//        getHerosTesting()
-//        getHeroes()
         getHerosV2()
+//        getHerosTesting()
     }
     
-    func getHeroesV1() {
+    func getHerosV2(){ // async method
+        
+        self.status = Status.loading
+        
+        URLSession.shared
+            .dataTaskPublisher(for: ApiService.shared.heroRequest()) // returns URLRequest
+            .tryMap{
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else{
+                    throw URLError(.badServerResponse)
+                }
+                return $0.data
+            }
+            .decode(type: HeroModel.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion{
+                case .failure:
+                    self.status = Status.error(error: "Error finding heroes")
+                    print("heroes sink failure\n")
+                case .finished: // start of recurring loop
+                    self.status = Status.loaded
+                    print("heroes sink finished, status = \(self.status)\n")
+                }
+            } receiveValue: { data in
+                self.heroes = data.data.results
+                print("getHerosV2 heroes: \(String(describing: self.heroes.count))") // prints ok
+            }
+            .store(in: &suscriptors)
+        print("End function")
+    }
+    
+    func getHeroesV1() { // callback method, not used, left here for reference
         
         self.status = Status.loading
         
@@ -36,38 +67,6 @@ final class HeroViewModel: ObservableObject {
                 print("Error fetching heros: ", error?.localizedDescription ?? "")
             }
         }
-    }
-    
-    func getHerosV2(){ // async method
-        print("Hi!")
-        self.status = Status.loading
-        
-        URLSession.shared
-            .dataTaskPublisher(for: ApiService.shared.heroRequest()) // returns URLRequest
-            .tryMap{
-                guard let response = $0.response as? HTTPURLResponse,
-                      response.statusCode == 200 else{
-//                    self.status = Status.error(error: "Server error")
-                    throw URLError(.badServerResponse)
-                }
-                return $0.data
-            }
-            .decode(type: HeroModel.self, decoder: JSONDecoder()) // try HeroModel instead of [Result]
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion{
-                case .failure:
-                    self.status = Status.error(error: "Error finding heroes")
-                    print("heroes sink failure\n")
-                case .finished:
-                    self.status = Status.loaded
-                    print("heroes sink finished, status = \(self.status)\n")
-                }
-            } receiveValue: { data in
-                self.heroes = data.data.results
-                print("getHerosV2 heroes: \(String(describing: self.heroes.first))\n")
-            }
-            .store(in: &suscriptors)
     }
     
     func getHerosTesting(){

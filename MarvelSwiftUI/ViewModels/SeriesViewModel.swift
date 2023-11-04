@@ -18,22 +18,8 @@ final class SeriesViewModel: ObservableObject {
     
     init() {
     }
-    
-    func getSeriesV1(hero: Result) { // not used, older way
-        
-        ApiService.shared.fetchSeries(heroId: hero.id) { [weak self] seriesResponse, error in
-            guard let self = self else { return }
-            
-            if let seriesResponse = seriesResponse {
-                self.series = seriesResponse.data.results
-                print("SeriesViewModel > getSeriesV1 > ApiService.shared.fetchSeries > seriesResponse: \(String(describing: seriesResponse))\n")
-            } else {
-                print("Error fetching series: ", error?.localizedDescription ?? "") // exec arrives at this line
-            }
-        }
-    } // not used, older way
-    
-    func getSeriesV2(hero: Result) {
+       
+    func getSeriesV2(hero: Result) { // async method
         
         URLSession.shared
             .dataTaskPublisher(for: ApiService.shared.seriesRequest(heroId: hero.id))
@@ -62,6 +48,20 @@ final class SeriesViewModel: ObservableObject {
                 print("getSeriesV2 series: \(String(describing: self.series))\n")
             }
             .store(in: &suscriptors)
+    }
+    
+    func getSeriesV1(hero: Result) { // callback method, not used
+        
+        ApiService.shared.fetchSeries(heroId: hero.id) { [weak self] seriesResponse, error in
+            guard let self = self else { return }
+            
+            if let seriesResponse = seriesResponse {
+                self.series = seriesResponse.data.results
+                print("SeriesViewModel > getSeriesV1 > ApiService.shared.fetchSeries > seriesResponse: \(String(describing: seriesResponse))\n")
+            } else {
+                print("Error fetching series: ", error?.localizedDescription ?? "") // exec arrives at this line
+            }
+        }
     }
     
     func getSeriesTesting() {

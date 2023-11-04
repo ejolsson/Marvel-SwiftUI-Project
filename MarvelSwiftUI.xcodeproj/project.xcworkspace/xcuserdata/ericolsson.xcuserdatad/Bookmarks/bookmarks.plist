@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>61</string>
+					<string>47</string>
 					<key>StartingColumnNumber</key>
-					<string>81</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>60</string>
+					<string>46</string>
 					<key>Timestamp</key>
-					<string>717338533.082154</string>
+					<string>720776396.735418</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,12 +34,12 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>                self.series = data.data.results
 </string>
 				<key>leading</key>
 				<string>                }
             } receiveValue: { data in
-                self.series = data.data.results</string>
+</string>
 				<key>trailing</key>
 				<string>                print("getSeriesV2 series: \(String(describing: self.series))\n")
             }
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>67</string>
+					<string>49</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>66</string>
+					<string>48</string>
 					<key>Timestamp</key>
-					<string>720735798.200075</string>
+					<string>720776293.68027</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -88,7 +88,7 @@
             } receiveValue: { data in
 </string>
 				<key>trailing</key>
-				<string>                print("getHerosV2 heroes: \(String(describing: self.heroes.first))\n")
+				<string>                print("getHerosV2 heroes: \(String(describing: self.heroes.count))") // prints ok
             }
             .store(in: &amp;suscriptors)
 </string>
@@ -136,7 +136,7 @@
 </string>
 				<key>trailing</key>
 				<string>        let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
-        print("heroRequest &gt; urlString: \(urlString)\n") // Expect "", print is null
+        print("heroRequest &gt; urlString: \(urlString)")
         
 </string>
 			</dict>
@@ -181,7 +181,7 @@
 </string>
 				<key>trailing</key>
 				<string>        let urlString: String = buildURLString(endpoint: "\(endpoints.characters.rawValue)", offset: "200")
-        print("heroRequest &gt; urlString: \(urlString)\n") // Expect "", print is null
+        print("heroRequest &gt; urlString: \(urlString)")
         
 </string>
 			</dict>

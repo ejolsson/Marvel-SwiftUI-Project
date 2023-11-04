@@ -13,7 +13,6 @@ struct HeroModel: Codable {
 }
 
 struct DataClass: Codable {
-//    let offset, limit, total, count: Int
     let results: [Result]
 }
 
@@ -21,8 +20,7 @@ struct Result: Codable, Identifiable {
     let id: Int
     let name, description: String
     let thumbnail: Thumbnail
-    let series: Comics // don't need this. get fm 2nd api call.
-
+    let series: Comics
 }
 
 struct Thumbnail: Codable {
@@ -38,8 +36,6 @@ struct Thumbnail: Codable {
 enum Extension: String, Codable {
     case jpg = "jpg"
 }
-
-// MARK: - LIKELY DON'T NEED THE ITEMS BELOW -
 
 struct Comics: Codable {
     let available: Int
