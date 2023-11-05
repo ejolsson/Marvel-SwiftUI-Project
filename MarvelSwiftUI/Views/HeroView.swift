@@ -14,24 +14,46 @@ struct HeroView: View {
     
     var body: some View {
         let heroes = viewModel.heroes
-        NavigationStack{
-            Text("Marvel Heros")
-                .bold()
-                .font(.title)
-                .id(0) // added for testing and item id
-            Spacer()
-            List{
-                ForEach(heroes) { hero in
-                    NavigationLink {
-                        SeriesView(hero: hero).environmentObject(SeriesViewModel())
-                            .id(1)
-                    } label: {
-                        HeroesRowView(hero: hero)
-                            .id(2)
+        #if os(iOS) // TODO: add watchOS
+            NavigationStack{
+                Text("Marvel Heroes")
+                    .bold()
+                    .font(.title)
+                    .id(0) // added for testing and item id
+                Spacer()
+                List{
+                    ForEach(heroes) { hero in
+                        NavigationLink {
+                            SeriesView(hero: hero).environmentObject(SeriesViewModel())
+                                .id(1)
+                        } label: {
+                            HeroesRowView(hero: hero)
+                                .id(2)
+                        }
                     }
                 }
             }
-        }
+        // TODO: add .navigationBarTitle("Heroes")
+        #else
+            NavigationStack{
+                Text("Marvel Heroes")
+                    .bold()
+                    .font(.title)
+                    .id(0) // added for testing and item id
+                Spacer()
+                List{
+                    ForEach(heroes) { hero in
+                        NavigationLink {
+                            SeriesView(hero: hero).environmentObject(SeriesViewModel())
+                                .id(1)
+                        } label: {
+                            HeroesRowView(hero: hero)
+                                .id(2)
+                        }
+                    }
+                }
+            }
+        #endif
     }
 }
 

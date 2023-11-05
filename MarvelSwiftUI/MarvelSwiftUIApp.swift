@@ -14,12 +14,17 @@ struct MarvelSwiftUIApp: App {
     @StateObject var seriesViewModel = SeriesViewModel()
     
     var body: some Scene {
-    
+        
         WindowGroup {
-
-            MainView()
-                .environmentObject(heroViewModel)
-//                .environmentObject(seriesViewModel)
+            #if os(OSX)
+                MainView()
+                    .environmentObject(heroViewModel)
+                    .frame(minWidth: 400, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
+            #else
+                MainView()
+                    .environmentObject(heroViewModel)
+    //                .environmentObject(seriesViewModel)
+            #endif
         }
     }
 }
