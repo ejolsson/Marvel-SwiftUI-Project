@@ -1,4 +1,4 @@
-# Marvel-SwiftUI-Project
+# Marvel SwiftUI Project - iOS & Mac App (multiplatform)
 
 ## Introduction
 Bootcamp project involving MVVM architecture, SwiftUI, Combine, API connections, and testing to multiple platforms (iOS, Mac, etc.).
@@ -30,14 +30,17 @@ When you tap on the Hero, you will see the detail showing the
 3. Title 
 4. Description
 
-# Screenshots
+# iOS Screenshots
 
-|   Main Screen            |
-|--------------------------|
-| <img src="./Screenshots/herolist.png" width="300" alt="Main Screen"> |
-|   Detail Screen          |
-| <img src="./Screenshots/detailview.png" width="300" alt="Detail Screen"> |
+|   Main Screen            |   Detail Screen      |
+|--------------------------|----------------------|
+| <img src="./Screenshots/herolist.png" width="300" alt="Main Screen"> | <img src="./Screenshots/detailview.png" width="300" alt="Detail Screen"> |
 
+# Mac Screenshots
+
+|   Main Screen            |   Detail Screen      |
+|--------------------------|----------------------|
+| <img src="./Screenshots/herolistmac.png" width="300" alt="Main Screen"> | <img src="./Screenshots/detailviewmac.png" width="300" alt="Detail Screen"> |
 <!-- 
 Main Screen
 ![App Screenshot](./screenshots/herolist.png)
