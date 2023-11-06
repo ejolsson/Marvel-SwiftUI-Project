@@ -27,6 +27,7 @@
       "size" : "32x32"
     },
     {
+      "filename" : "CaptAmerica128.jpg",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
@@ -52,6 +53,7 @@
       "size" : "512x512"
     },
     {
+      "filename" : "CaptAmerica 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

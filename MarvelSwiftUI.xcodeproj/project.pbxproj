@@ -19,6 +19,10 @@
 		4A2EE20029D5F03E00C8093D /* SeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2EE1FE29D5F03E00C8093D /* SeriesViewModel.swift */; };
 		4A2EE20229D5F0DC00C8093D /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2EE20129D5F0DC00C8093D /* SeriesModel.swift */; };
 		4A2EE20329D5F0DC00C8093D /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2EE20129D5F0DC00C8093D /* SeriesModel.swift */; };
+		4A4EA53B2AF9558000D65D0E /* herolistmac.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA53A2AF9558000D65D0E /* herolistmac.png */; };
+		4A4EA53C2AF9558000D65D0E /* herolistmac.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA53A2AF9558000D65D0E /* herolistmac.png */; };
+		4A4EA53E2AF9559800D65D0E /* detailviewmac.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA53D2AF9559800D65D0E /* detailviewmac.png */; };
+		4A4EA53F2AF9559800D65D0E /* detailviewmac.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA53D2AF9559800D65D0E /* detailviewmac.png */; };
 		4A61C2F629CEDEC9001C898C /* MarvelSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */; };
 		4A61C2FA29CEDECB001C898C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61C2F929CEDECB001C898C /* Assets.xcassets */; };
 		4A61C2FE29CEDECB001C898C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61C2FD29CEDECB001C898C /* Preview Assets.xcassets */; };
@@ -92,6 +96,8 @@
 		4A2EE1FA29D5EAE500C8093D /* SeriesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRowView.swift; sourceTree = "<group>"; };
 		4A2EE1FE29D5F03E00C8093D /* SeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewModel.swift; sourceTree = "<group>"; };
 		4A2EE20129D5F0DC00C8093D /* SeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModel.swift; sourceTree = "<group>"; };
+		4A4EA53A2AF9558000D65D0E /* herolistmac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = herolistmac.png; sourceTree = "<group>"; };
+		4A4EA53D2AF9559800D65D0E /* detailviewmac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailviewmac.png; sourceTree = "<group>"; };
 		4A61C2F229CEDEC9001C898C /* MarvelSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61C2F529CEDEC9001C898C /* MarvelSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIApp.swift; sourceTree = "<group>"; };
 		4A61C2F929CEDECB001C898C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,7 +305,9 @@
 			isa = PBXGroup;
 			children = (
 				4A88F8092ABDEEE700139E55 /* herolist.png */,
+				4A4EA53A2AF9558000D65D0E /* herolistmac.png */,
 				4A88F80B2ABDEF1500139E55 /* detailview.png */,
+				4A4EA53D2AF9559800D65D0E /* detailviewmac.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -523,6 +531,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4EA53B2AF9558000D65D0E /* herolistmac.png in Resources */,
+				4A4EA53E2AF9559800D65D0E /* detailviewmac.png in Resources */,
 				4A88F80A2ABDEEE700139E55 /* herolist.png in Resources */,
 				4A61C2FE29CEDECB001C898C /* Preview Assets.xcassets in Resources */,
 				4A61C2FA29CEDECB001C898C /* Assets.xcassets in Resources */,
@@ -549,7 +559,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AF037E62AF7AFDD001DA946 /* Preview Assets.xcassets in Resources */,
+				4A4EA53C2AF9558000D65D0E /* herolistmac.png in Resources */,
 				4AF037E32AF7AFDD001DA946 /* Assets.xcassets in Resources */,
+				4A4EA53F2AF9559800D65D0E /* detailviewmac.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
