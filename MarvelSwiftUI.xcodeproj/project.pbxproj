@@ -40,6 +40,7 @@
 		4AA72D642AFAB3740058E800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA72D632AFAB3740058E800 /* Assets.xcassets */; };
 		4AA72D672AFAB3740058E800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */; };
 		4AA72D6A2AFAB3750058E800 /* Marvel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4AA72D5D2AFAB3720058E800 /* Marvel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4AA72D712AFAB9640058E800 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA72D702AFAB9640058E800 /* NotificationController.swift */; };
 		4AB44F8129D9814700776012 /* MarvelSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB44F8029D9814700776012 /* MarvelSwiftUITests.swift */; };
 		4AB44F8329D9824400776012 /* MarvelSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB44F8229D9824400776012 /* MarvelSwiftUIUITests.swift */; };
 		4AB44F8629D9BBBC00776012 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB44F8529D9BBBC00776012 /* ViewInspector */; };
@@ -142,6 +143,7 @@
 		4AA72D612AFAB3720058E800 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4AA72D632AFAB3740058E800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AA72D702AFAB9640058E800 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		4AB44F8029D9814700776012 /* MarvelSwiftUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUITests.swift; sourceTree = "<group>"; };
 		4AB44F8229D9824400776012 /* MarvelSwiftUIUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIUITests.swift; sourceTree = "<group>"; };
 		4AD93C3F2AF5565000C4BAD3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		4A61C2E929CEDEC9001C898C = {
 			isa = PBXGroup;
 			children = (
+				4AA72D6F2AFAB8FD0058E800 /* watchOS Extension */,
 				4A61C2F429CEDEC9001C898C /* MarvelSwiftUI */,
 				4AB44F7D29D97F3100776012 /* MarvelSwiftUITests */,
 				4AB44F7E29D97F4A00776012 /* MarvelSwiftUIUITests */,
@@ -328,8 +331,6 @@
 		4AA72D5E2AFAB3720058E800 /* Marvel Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				4AA72D5F2AFAB3720058E800 /* MarvelApp.swift */,
-				4AA72D612AFAB3720058E800 /* ContentView.swift */,
 				4AA72D632AFAB3740058E800 /* Assets.xcassets */,
 				4AA72D652AFAB3740058E800 /* Preview Content */,
 			);
@@ -342,6 +343,16 @@
 				4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AA72D6F2AFAB8FD0058E800 /* watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AA72D5F2AFAB3720058E800 /* MarvelApp.swift */,
+				4AA72D612AFAB3720058E800 /* ContentView.swift */,
+				4AA72D702AFAB9640058E800 /* NotificationController.swift */,
+			);
+			path = "watchOS Extension";
 			sourceTree = "<group>";
 		};
 		4AB44F7D29D97F3100776012 /* MarvelSwiftUITests */ = {
@@ -732,6 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA72D712AFAB9640058E800 /* NotificationController.swift in Sources */,
 				4AA72D622AFAB3720058E800 /* ContentView.swift in Sources */,
 				4AA72D602AFAB3720058E800 /* MarvelApp.swift in Sources */,
 			);
