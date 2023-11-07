@@ -14,7 +14,7 @@ struct HeroView: View {
     
     var body: some View {
         let heroes = viewModel.heroes
-        #if os(iOS) // TODO: add watchOS
+        #if os(iOS) || os(watchOS)
             NavigationStack{
                 Text("Marvel Heroes")
                     .bold()

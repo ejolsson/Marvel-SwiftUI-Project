@@ -35,6 +35,11 @@
 		4A9A66E029D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
 		4A9A66E129D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
 		4A9A66E229D45B1900227423 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A66DF29D45B1900227423 /* HeroRowView.swift */; };
+		4AA72D602AFAB3720058E800 /* MarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA72D5F2AFAB3720058E800 /* MarvelApp.swift */; };
+		4AA72D622AFAB3720058E800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA72D612AFAB3720058E800 /* ContentView.swift */; };
+		4AA72D642AFAB3740058E800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA72D632AFAB3740058E800 /* Assets.xcassets */; };
+		4AA72D672AFAB3740058E800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */; };
+		4AA72D6A2AFAB3750058E800 /* Marvel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4AA72D5D2AFAB3720058E800 /* Marvel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4AB44F8129D9814700776012 /* MarvelSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB44F8029D9814700776012 /* MarvelSwiftUITests.swift */; };
 		4AB44F8329D9824400776012 /* MarvelSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB44F8229D9824400776012 /* MarvelSwiftUIUITests.swift */; };
 		4AB44F8629D9BBBC00776012 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB44F8529D9BBBC00776012 /* ViewInspector */; };
@@ -74,6 +79,13 @@
 			remoteGlobalIDString = 4A61C2F129CEDEC9001C898C;
 			remoteInfo = MarvelSwiftUI;
 		};
+		4AA72D682AFAB3750058E800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A61C2EA29CEDEC9001C898C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AA72D5C2AFAB3720058E800;
+			remoteInfo = "Marvel Watch App";
+		};
 		4AF037ED2AF7AFDD001DA946 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A61C2EA29CEDEC9001C898C /* Project object */;
@@ -89,6 +101,20 @@
 			remoteInfo = "MarvelSwiftUI (macOS)";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AA72D6B2AFAB3750058E800 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4AA72D6A2AFAB3750058E800 /* Marvel Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A0F62C629D302C40016F855 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
@@ -111,6 +137,11 @@
 		4A95D52829D6E3CB00498D5B /* SeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesView.swift; sourceTree = "<group>"; };
 		4A9A66DF29D45B1900227423 /* HeroRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRowView.swift; sourceTree = "<group>"; };
 		4A9A66E329D45E5D00227423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4AA72D5D2AFAB3720058E800 /* Marvel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA72D5F2AFAB3720058E800 /* MarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApp.swift; sourceTree = "<group>"; };
+		4AA72D612AFAB3720058E800 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AA72D632AFAB3740058E800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AB44F8029D9814700776012 /* MarvelSwiftUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUITests.swift; sourceTree = "<group>"; };
 		4AB44F8229D9824400776012 /* MarvelSwiftUIUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelSwiftUIUITests.swift; sourceTree = "<group>"; };
 		4AD93C3F2AF5565000C4BAD3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -154,6 +185,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4AA72D5A2AFAB3720058E800 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4AF037D92AF7AFDA001DA946 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +225,7 @@
 				4AF037DD2AF7AFDB001DA946 /* MarvelSwiftUI (macOS) */,
 				4AF037EF2AF7AFDE001DA946 /* MarvelSwiftUI (macOS)Tests */,
 				4AF037F92AF7AFDE001DA946 /* MarvelSwiftUI (macOS)UITests */,
+				4AA72D5E2AFAB3720058E800 /* Marvel Watch App */,
 				4A61C2F329CEDEC9001C898C /* Products */,
 				4A95D52329D6DE6A00498D5B /* Frameworks */,
 				4AE857072ABDE93E007EF349 /* Screenshots */,
@@ -202,6 +241,7 @@
 				4AF037DC2AF7AFDA001DA946 /* MarvelSwiftUI (macOS).app */,
 				4AF037EC2AF7AFDD001DA946 /* MarvelSwiftUI (macOS)Tests.xctest */,
 				4AF037F62AF7AFDE001DA946 /* MarvelSwiftUI (macOS)UITests.xctest */,
+				4AA72D5D2AFAB3720058E800 /* Marvel Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +325,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4AA72D5E2AFAB3720058E800 /* Marvel Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				4AA72D5F2AFAB3720058E800 /* MarvelApp.swift */,
+				4AA72D612AFAB3720058E800 /* ContentView.swift */,
+				4AA72D632AFAB3740058E800 /* Assets.xcassets */,
+				4AA72D652AFAB3740058E800 /* Preview Content */,
+			);
+			path = "Marvel Watch App";
+			sourceTree = "<group>";
+		};
+		4AA72D652AFAB3740058E800 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AA72D662AFAB3740058E800 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		4AB44F7D29D97F3100776012 /* MarvelSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,10 +419,12 @@
 				4A61C2EE29CEDEC9001C898C /* Sources */,
 				4A61C2EF29CEDEC9001C898C /* Frameworks */,
 				4A61C2F029CEDEC9001C898C /* Resources */,
+				4AA72D6B2AFAB3750058E800 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4AA72D692AFAB3750058E800 /* PBXTargetDependency */,
 			);
 			name = MarvelSwiftUI;
 			packageProductDependencies = (
@@ -412,6 +473,23 @@
 			productName = MarvelSwiftUIUITests;
 			productReference = 4A61C30D29CEDECB001C898C /* MarvelSwiftUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4AA72D5C2AFAB3720058E800 /* Marvel Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA72D6E2AFAB3750058E800 /* Build configuration list for PBXNativeTarget "Marvel Watch App" */;
+			buildPhases = (
+				4AA72D592AFAB3720058E800 /* Sources */,
+				4AA72D5A2AFAB3720058E800 /* Frameworks */,
+				4AA72D5B2AFAB3720058E800 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Marvel Watch App";
+			productName = "Marvel Watch App";
+			productReference = 4AA72D5D2AFAB3720058E800 /* Marvel Watch App.app */;
+			productType = "com.apple.product-type.application";
 		};
 		4AF037DB2AF7AFDA001DA946 /* MarvelSwiftUI (macOS) */ = {
 			isa = PBXNativeTarget;
@@ -487,6 +565,9 @@
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 4A61C2F129CEDEC9001C898C;
 					};
+					4AA72D5C2AFAB3720058E800 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					4AF037DB2AF7AFDA001DA946 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -522,6 +603,7 @@
 				4AF037DB2AF7AFDA001DA946 /* MarvelSwiftUI (macOS) */,
 				4AF037EB2AF7AFDD001DA946 /* MarvelSwiftUI (macOS)Tests */,
 				4AF037F52AF7AFDE001DA946 /* MarvelSwiftUI (macOS)UITests */,
+				4AA72D5C2AFAB3720058E800 /* Marvel Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -551,6 +633,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AA72D5B2AFAB3720058E800 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA72D672AFAB3740058E800 /* Preview Assets.xcassets in Resources */,
+				4AA72D642AFAB3740058E800 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +728,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4AA72D592AFAB3720058E800 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA72D622AFAB3720058E800 /* ContentView.swift in Sources */,
+				4AA72D602AFAB3720058E800 /* MarvelApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4AF037D82AF7AFDA001DA946 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +775,11 @@
 			isa = PBXTargetDependency;
 			target = 4A61C2F129CEDEC9001C898C /* MarvelSwiftUI */;
 			targetProxy = 4A61C30E29CEDECB001C898C /* PBXContainerItemProxy */;
+		};
+		4AA72D692AFAB3750058E800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AA72D5C2AFAB3720058E800 /* Marvel Watch App */;
+			targetProxy = 4AA72D682AFAB3750058E800 /* PBXContainerItemProxy */;
 		};
 		4AF037EE2AF7AFDD001DA946 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -803,6 +908,7 @@
 		4A61C31829CEDECB001C898C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarvelSwiftUI/MarvelSwiftUI.entitlements;
@@ -844,6 +950,7 @@
 		4A61C31929CEDECB001C898C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarvelSwiftUI/MarvelSwiftUI.entitlements;
@@ -969,6 +1076,76 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MarvelSwiftUI;
+			};
+			name = Release;
+		};
+		4AA72D6C2AFAB3750058E800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Marvel Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4578H3T55F;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Marvel;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ericolsson.MarvelSwiftUI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ericolsson.MarvelSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		4AA72D6D2AFAB3750058E800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Marvel Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4578H3T55F;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Marvel;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ericolsson.MarvelSwiftUI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ericolsson.MarvelSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1164,6 +1341,15 @@
 			buildConfigurations = (
 				4A61C31E29CEDECB001C898C /* Debug */,
 				4A61C31F29CEDECB001C898C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA72D6E2AFAB3750058E800 /* Build configuration list for PBXNativeTarget "Marvel Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA72D6C2AFAB3750058E800 /* Debug */,
+				4AA72D6D2AFAB3750058E800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
